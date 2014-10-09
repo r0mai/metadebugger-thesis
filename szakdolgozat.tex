@@ -1,0 +1,87 @@
+\documentclass[a4paper,12pt]{report}
+
+\usepackage[latin2]{inputenc} % vagy latin2 helyett utf8
+\usepackage[T1]{fontenc}      % karakterkódolás
+\usepackage[magyar]{babel}    % magyar beállítások
+\frenchspacing                % helyközök
+%\usepackage{times}           % betûtípus
+\usepackage{lmodern}          %   vagy inkább ez
+
+\usepackage[margin=2.5cm,left=3.5cm,includeheadfoot]{geometry}
+                              % margók
+\usepackage{graphicx}         % képekhez
+\usepackage{setspace}         % sorköz
+\onehalfspacing               % másfeles
+
+
+
+
+\begin{document}
+
+% ------------------------------------------------------------------------------
+% Címlap
+
+\input{cimlap.tex}
+
+% ------------------------------------------------------------------------------
+% Témabejelentõ
+
+\vspace*{\fill}
+\begin{center}
+Ehelyett az oldal helyett a Szakdolgozat-téma bejelentõ szerepel.
+\end{center}
+\vfill
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+
+% ------------------------------------------------------------------------------
+% Tartalomjegyzék
+
+\tableofcontents
+
+% ------------------------------------------------------------------------------
+
+
+\chapter{Bevezetõ}
+
+A Bevezetõ a témaválasztás indoklását és a megoldandó feladat rövid, közérthetõ leírását tartalmazza.
+
+
+% ------------------------------------------------------------------------------
+
+
+\chapter{Felhasználói dokumentáció}
+
+A Felhasználói dokumentáció tartalmazza
+\begin{itemize}
+\item a megoldott probléma rövid megfogalmazását,
+\item a felhasznált módszerek rövid leírását,
+\item a program használatához szükséges összes információt.
+\end{itemize}
+
+
+% ------------------------------------------------------------------------------
+
+
+\chapter{Fejlesztõi dokumentáció}
+
+A Fejlesztõi dokumentáció tartlmazza
+\begin{itemize}
+\item a probléma részletes specifikációját,
+\item a felhasznált módszerek részletes leírását, a használt fogalmak definícióját,
+\item a program logikai és fizikai szerkezetének leírásár (adatszerkezetek, adatbázisok, modulfelbontás),
+\item a tesztelési tervet és a tesztelés eredményeit.
+\end{itemize}
+
+
+% ------------------------------------------------------------------------------
+
+
+% ------------------------------------------------------------------------------
+
+\begin{thebibliography}{9}
+\bibitem{v} Valaki, valami.
+\end{thebibliography}
+
+\end{document}
