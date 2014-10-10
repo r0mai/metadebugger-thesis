@@ -1,0 +1,6 @@
+To compile:
+  make pdf
+
+Requires
+  - sudo apt-get install texlive-full
+  - http://latex-mk.sourceforge.net/
