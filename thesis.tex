@@ -13,15 +13,12 @@
 \usepackage{setspace}         % sorköz
 \onehalfspacing               % másfeles
 
-
-
-
 \begin{document}
 
 % ------------------------------------------------------------------------------
 % Címlap
 
-\input{cover.tex}
+\input{tex/cover}
 
 % ------------------------------------------------------------------------------
 % Témabejelentõ
@@ -35,50 +32,15 @@ Temabejelento
 \newpage
 \setcounter{page}{1}
 
-% ------------------------------------------------------------------------------
-% Tartalomjegyzék
-
 \tableofcontents
 
-% ------------------------------------------------------------------------------
+% TODO maybe \include is better?
+% http://en.wikibooks.org/wiki/LaTeX/Modular_Documents#Getting_LaTeX_to_process_multiple_files
+\input{tex/introduction}
 
+\input{tex/userdoc}
 
-\chapter{Introduction}
-
-A Bevezeto a temavalasztas indoklasat és a megoldando feladat rovid, kozertheto leirasat tartalmazza.
-
-
-% ------------------------------------------------------------------------------
-
-
-\chapter{Felhasználói dokumentáció}
-
-A Felhasználói dokumentáció tartalmazza
-\begin{itemize}
-\item a megoldott probléma rövid megfogalmazását,
-\item a felhasznált módszerek rövid leírását,
-\item a program használatához szükséges összes információt.
-\end{itemize}
-
-
-% ------------------------------------------------------------------------------
-
-
-\chapter{Fejlesztõi dokumentáció}
-
-A Fejlesztõi dokumentáció tartlmazza
-\begin{itemize}
-\item a probléma részletes specifikációját,
-\item a felhasznált módszerek részletes leírását, a használt fogalmak definícióját,
-\item a program logikai és fizikai szerkezetének leírásár (adatszerkezetek, adatbázisok, modulfelbontás),
-\item a tesztelési tervet és a tesztelés eredményeit.
-\end{itemize}
-
-
-% ------------------------------------------------------------------------------
-
-
-% ------------------------------------------------------------------------------
+\input{tex/devdoc}
 
 \begin{thebibliography}{9}
 \bibitem{v} Valaki, valami.
