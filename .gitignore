@@ -5,4 +5,6 @@
 *.ps
 *.toc
 *.toc.old
-
+*.blg
+*.bbl
+*.out
