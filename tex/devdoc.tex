@@ -12,11 +12,10 @@
 
 \section{Libraries used}
 
-\subsection*{Boost}
+\subsection*{Boost\cite{boost}}
 
 Boost is a set of open source C++ libraries that provide ready to use solutions
-to common tasks.\cite{boost} In Metadebugger several Boost libraries are being
-used:
+to common tasks. In Metadebugger several Boost libraries are being used:
 \begin{description}
     \item[Boost.Graph] \hfill \\
         This library provides a generic interface and implementations of graph
@@ -63,10 +62,10 @@ used:
         file.
 \end{description}
 
-\subsection*{Just}
+\subsection*{Just\cite{just}}
 
-Just is a collection of lightweight C++ libraries.\cite{just} The following
-Just libraries are used in Metadebugger:
+Just is a collection of lightweight C++ libraries. The following Just libraries
+are used in Metadebugger:
 \begin{description}
     \item[just::console] \hfill \\
         The just::console library provides a cross platform interface to output
@@ -79,24 +78,24 @@ Just libraries are used in Metadebugger:
         Metadebugger uses just::test to create unit and integration test cases.
 \end{description}
 
-\subsection*{Clang}
+\subsection*{Clang\cite{clang}}
 
 Clang is a C++ frontend for LLVM. Together they form a highly customizable C++
-compiler.\cite{clang} Clang is used to compile the source code given as an
-input to Metadebugger.
+compiler. Clang is used to compile the source code given as an input to
+Metadebugger.
 
-\subsection*{Templight}
+\subsection*{Templight\cite{templight}}
 
 Templight (in its current form) is a source code patch to Clang. With
 Templight, Clang is able to generate output about the template instantiation
-steps during compilation.\cite{templight} Metadebugger takes this output and
-creates the necesseary data structures to be able to simulate the compilation.
+steps during compilation. Metadebugger takes this output and creates the
+necesseary data structures to be able to simulate the compilation.
 
-\subsection*{Readline}
+\subsection*{Readline\cite{readline}}
 
 The Readline library is the de facto standard library used to handle user
 inputs in software that uses an interactive command line
-interface.\cite{readline}
+interface.
 
 \section{Architecture}
 
