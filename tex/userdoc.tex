@@ -20,7 +20,7 @@ In the following section, the following notations are used: command parameters
 that are in square brackets are optional. Parameters that are between angle
 brackets have to be replaced by the user with something.
 
-\subsection*{Evaluate}
+\subsection*{evaluate}
 
 Usage: \lstinline$evaluate [<type>]$
 
@@ -37,7 +37,7 @@ formatting, you can explicitly enter
 \lstinline[language=C++]|metashell::format< <type> >::type| for the same
 effect.
 
-\subsection*{Step}
+\subsection*{step}
 
 Usage: \lstinline$step [over] [n]$
 
@@ -48,13 +48,13 @@ means step the program backwards.
 
 Use of the \lstinline$over$ qualifier will jump over sub instantiations.
 
-\subsection*{Rbreak}
+\subsection*{rbreak}
 
 Usage: \lstinline$rbreak <regex>$
 
 Add breakpoint for all types matching \lstinline$<regex>$.
 
-\subsection*{Continue}
+\subsection*{continue}
 
 Usage: \lstinline$continue [n]$
 
@@ -64,7 +64,7 @@ The program is continued until the nth breakpoint or the end of the program is
 reached. n defaults to 1 if not specified. Negative n means continue the
 program backwards.
 
-\subsection*{Forwardtrace}
+\subsection*{forwardtrace}
 
 Usage: \lstinline$forwardtrace|ft [full] [n]$
 
@@ -76,20 +76,20 @@ path has been visited before.
 The n specifier limits the depth of the trace. If n is not specified, then the
 trace depth is unlimited.
 
-\subsection*{Backtrace}
+\subsection*{backtrace}
 
 Usage: \lstinline$backtrace|bt$
 
 Print backtrace from the current point.
 
-\subsection*{Help}
+\subsection*{help}
 
 Usage: \lstinline$help [<command>]$
 
 Show help for commands.
 If \lstinline$<command>$ is specified, show a list of all available commands.
 
-\subsection*{Quit}
+\subsection*{quit}
 
 Usage: \lstinline$quit$
 
