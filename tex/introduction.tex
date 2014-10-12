@@ -10,8 +10,13 @@ during runtime. These tools are called debuggers.
 
 Most popular programming languages and runtime environments provide debuggers
 for the programmers. Unfortunately no such tool existed for C++ Template
-Metaprograms. Metadebugger tries to fill this hole by providing an easy to use
-tool, which can be used to inspect what happens while a C++ compiler compiles a
+Metaprograms. Metaprogram developers used to rely on the cryptic and sometimes
+multiple pages long error and warning messages produced by the compiler to
+debug their code. Decoding these error messages can take hours or sometimes
+even days. Clearly, there is a need for a tool which makes this process easier.
+
+Metadebugger tries to fill this hole by providing an easy to use tool, which
+can be used to inspect what happens while a C++ compiler compiles a
 metaprogram.
 
 Metadebugger uses Clang with Templight behind the scenes to gather the
