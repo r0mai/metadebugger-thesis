@@ -4,3 +4,11 @@ To compile:
 Requires
   - sudo apt-get install texlive-full
   - http://latex-mk.sourceforge.net/
+
+Image generation:
+fib5_call_graph.ps
+    ./app/metashell < '
+        #include "../sample.hpp"
+        #msh mdb int_<fib<5>::value>
+        img'
+    dot -Tps  graph.dot  > fib5_call_graph.eps
