@@ -5,7 +5,7 @@
 
 \section{Algorithms and data structures used}
 
-\subsection*{The represation of a metaprogram}
+\subsection*{The representation of a metaprogram}
 
 C++ template metaprogramming can be seen as a form of purely functional
 programming. TODOCITE In functional programming a program's main components
@@ -15,8 +15,8 @@ get their parameters as template parameters, and return values by defining
 member types or compile time constants based on the template parameters.
 
 For a specific metaprogram, Metadebugger represents only the metaprogram's call
-graph. For example instantiating int_<fib<5>::value> would be represented by
-the following graph in Metadebugger:
+graph. For example instantiating \lstinline|int_<fib<5>::value>| would be
+represented by the following graph in Metadebugger:
 
 \includegraphics[width=0.3\textwidth]{img/fib5_call_graph.eps}
 
