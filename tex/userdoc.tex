@@ -1,4 +1,6 @@
 
+% Maybe some stuff about template metaprogramming in this chapter?
+
 \chapter{User documentation}
 
 \section{Target audience}
@@ -14,4 +16,82 @@ metaprogramming in C++.
 
 \section{Command reference}
 
-% Maybe some stuff about template metaprogramming?
+In the following section, the following notations are used: command parameters
+that are in square brackets are optional. Parameters that are between angle
+brackets have to be replaced by the user with something.
+
+\subsection*{Evaluate}
+
+Usage: \lstinline$evaluate [<type>]$
+
+Evaluate and start debugging a new metaprogram.
+
+If called with no arguments, then the last evaluated metaprogram will
+be reevaluated.
+
+Previous breakpoints are cleared.
+
+Unlike metashell, evaluate doesn't use metashell::format to avoid
+cluttering the debugged metaprogram with unrelated code. If you need
+formatting, you can explicitly enter
+\lstinline[language=C++]|metashell::format< <type> >::type| for the same
+effect.
+
+\subsection*{Step}
+
+Usage: \lstinline$step [over] [n]$
+
+Step the program.
+
+Argument n means step n times. n defaults to 1 if not specified. Negative n
+means step the program backwards.
+
+Use of the \lstinline$over$ qualifier will jump over sub instantiations.
+
+\subsection*{Rbreak}
+
+Usage: \lstinline$rbreak <regex>$
+
+Add breakpoint for all types matching \lstinline$<regex>$.
+
+\subsection*{Continue}
+
+Usage: \lstinline$continue [n]$
+
+Continue program being debugged.
+
+The program is continued until the nth breakpoint or the end of the program is
+reached. n defaults to 1 if not specified. Negative n means continue the
+program backwards.
+
+\subsection*{Forwardtrace}
+
+Usage: \lstinline$forwardtrace|ft [full] [n]$
+
+Print forwardtrace from the current point.
+
+Use of the full qualifier will expand Memoizations even if that instantiation
+path has been visited before.
+
+The n specifier limits the depth of the trace. If n is not specified, then the
+trace depth is unlimited.
+
+\subsection*{Backtrace}
+
+Usage: \lstinline$backtrace|bt$
+
+Print backtrace from the current point.
+
+\subsection*{Help}
+
+Usage: \lstinline$help [<command>]$
+
+Show help for commands.
+If \lstinline$<command>$ is specified, show a list of all available commands.
+
+\subsection*{Quit}
+
+Usage: \lstinline$quit$
+
+Quit metadebugger.
+
