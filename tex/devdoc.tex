@@ -20,11 +20,34 @@ represented by the following graph in Metadebugger:
 
 \includegraphics[width=\textwidth]{img/fib5_call_graph.eps}
 
+It can be seen from the above graphic, that the graph vertices represent types,
+and edges represent instantiation events. A type can instantiate multiple
+types, and a type can be referenced from multiple places. The first reference
+to a type will be a TempateInstantiation event (as it is instantiated for the
+first time by the compiler). The following references will reuse the already
+created type, so those become Memoization events.
+
 \subsection*{Forwardtrace}
 
 \subsection*{Stepping}
 
 \subsection*{Command matching}
+
+\subsection*{Graph filtering}
+
+The underlying C++ compiler emit a lot of instantiation events which don't have
+real value to the user. These events need to be filtered out from the graph for
+better user experience. The edges which represent these events are not
+physically taken out from graph, only an edge property flag is set to disable
+the edge. Algorithms which traverse the graph will of course have to check this
+flag to operate only on the interesting part of the graph.
+
+The decision to only use a flag instead of modifying the graph has the
+following advantages:
+
+\begin{itemize}
+    \item TODO
+\end{itemize}
 
 \section{Class hierarchy}
 
