@@ -43,10 +43,23 @@ the edge. Algorithms which traverse the graph will of course have to check this
 flag to operate only on the interesting part of the graph.
 
 The decision to only use a flag instead of modifying the graph has the
-following advantages:
+following properties:
 
 \begin{itemize}
-    \item TODO
+    \item Faster filtering process, since the internal vectors used to
+        represent the graph are not touched.
+    \item Uses more memory, since memory used by unused data are not freed back
+        to the operating system.
+    \item Not currently implemented, but these unused parts of the graph can be
+        given to the advanced users, if they're interested.
+    \item In boost's graph implementation, \lstinline|vertex_descriptor|
+        objects used to refer to vertices of the graph are unsigned integers.
+        The documentation promises, that these \lstinline|vertex_descriptor|
+        start from 0 and go up from there for every vertex added to the graph.
+        The algorithms in Metadebugger relies heavily on this handy property.
+        Removing vertices from the graph would break this continous indexing.
+
+
 \end{itemize}
 
 \section{Class hierarchy}
