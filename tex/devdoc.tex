@@ -46,21 +46,53 @@ The decision to only use a flag instead of modifying the graph has the
 following properties:
 
 \begin{itemize}
-    \item Faster filtering process, since the internal vectors used to
-        represent the graph are not touched.
-    \item Uses more memory, since memory used by unused data are not freed back
+    \item
+        Faster filtering process, since the internal vectors used to represent
+        the graph are not touched.
+    \item
+        Uses more memory, since memory used by unused data are not freed back
         to the operating system.
-    \item Not currently implemented, but these unused parts of the graph can be
+    \item
+        Not currently implemented, but these unused parts of the graph can be
         given to the advanced users, if they're interested.
-    \item In boost's graph implementation, \lstinline|vertex_descriptor|
+    \item
+        In boost's graph implementation, \lstinline|vertex_descriptor|
         objects used to refer to vertices of the graph are unsigned integers.
         The documentation promises, that these \lstinline|vertex_descriptor|
         start from 0 and go up from there for every vertex added to the graph.
         The algorithms in Metadebugger relies heavily on this handy property.
         Removing vertices from the graph would break this continous indexing.
-
-
 \end{itemize}
+
+The filtering process takes multiple stages. The filter algorithm starts out
+with a graph, where all edges are enabled.
+
+\begin{enumerate}
+    \item
+        Disable all edges. This is useful because the following stages become
+        simpler.
+    \item
+        Enable edges going from the root vertex for which the
+        \lstinline|point_of_instantiation| edge property matches the currently
+        entered line. This is to filter out instantiation subtrees, which were
+        not initiated by the type entered by the user.
+    \item
+        Now a depth first traversal is done from the root vertex going only on
+        the edges we enabled in the previous section. For every new vertex the
+        traversal encounters, the algorithm enables all out edges, and
+        continues the traversal through these edges.
+    \item
+        Clang generates a TemplateInstantiation and a Memoization event for the
+        result type. Disable the Memoization one. In this process, the name of
+        the vertex pointed by these two edges is trimmed too, so the
+        \lstinline|metashell::wrap| wrapper doesn't clutter the result.
+    \item
+        Clang sometimes triggers multiple Memoization events for the same type
+        instantiated from a single type, and thus equivalent parallel edges
+        appear in the graph. Since the user doesn't get any useful information
+        about how many times Clang internally checked a type instantiation,
+        these get filtered out as well.
+\end{enumerate}
 
 \section{Class hierarchy}
 
