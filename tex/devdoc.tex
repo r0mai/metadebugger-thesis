@@ -27,35 +27,6 @@ to a type will be a TempateInstantiation event (as it is instantiated for the
 first time by the compiler). The following references will reuse the already
 created type, so those become Memoization events.
 
-\subsection*{Forwardtrace}
-
-When at some point the user wants to see what will happen in the future with
-the current type it is the eaisest to issue a forwardtrace command. Here is
-what the forwardtrace looks like at the very beginning of the
-\lstinline|int_<fib<5>::value|:
-
-\bigskip
-
-% TODO this on a white background
-\includegraphics[width=0.5\textwidth]{img/fib5_ft.eps}
-
-The algorithm which prints this is basically a depth first traversal printing
-a line every time it visits a vertex. The algorithm is iterative and thus keeps
-track of the edges it has to visit in a stack. In addition it also keeps track
-of the current depth of the traversal in the stack, so the depth of the
-identation is known when printing a line.
-
-For better readability, it is also required to know for every depth less than
-the current depth if the algorithm should print a \lstinline$'|'$ or not. This
-is achieved by having a vector of counters from 0 to the current depth. Each
-element in the vector counts how many elements are there in the stack with that
-particular depth. For every depth, the algorithm prints \lstinline$'|'$ when
-this counter is greater than 0.
-
-\subsection*{Stepping}
-
-\subsection*{Command matching}
-
 \subsection*{Graph filtering}
 
 The underlying C++ compiler emit a lot of instantiation events which don't have
@@ -116,6 +87,35 @@ with a graph, where all edges are enabled.
         about how many times Clang internally checked a type instantiation,
         these get filtered out as well.
 \end{enumerate}
+
+\subsection*{Forwardtrace}
+
+When at some point the user wants to see what will happen in the future with
+the current type it is the eaisest to issue a forwardtrace command. Here is
+what the forwardtrace looks like at the very beginning of the
+\lstinline|int_<fib<5>::value|:
+
+\bigskip
+
+% TODO this on a white background
+\includegraphics[width=0.5\textwidth]{img/fib5_ft.eps}
+
+The algorithm which prints this is basically a depth first traversal printing
+a line every time it visits a vertex. The algorithm is iterative and thus keeps
+track of the edges it has to visit in a stack. In addition it also keeps track
+of the current depth of the traversal in the stack, so the depth of the
+identation is known when printing a line.
+
+For better readability, it is also required to know for every depth less than
+the current depth if the algorithm should print a \lstinline$'|'$ or not. This
+is achieved by having a vector of counters from 0 to the current depth. Each
+element in the vector counts how many elements are there in the stack with that
+particular depth. For every depth, the algorithm prints \lstinline$'|'$ when
+this counter is greater than 0.
+
+\subsection*{Stepping}
+
+\subsection*{Command matching}
 
 \section{Class hierarchy}
 
