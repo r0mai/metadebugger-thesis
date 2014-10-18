@@ -2,7 +2,7 @@ To compile:
   make
 
 Requires
-  - sudo apt-get install texlive-full
+  - sudo apt-get install texlive-full imagemagick
   - http://latex-mk.sourceforge.net/
 
 Image generation:
