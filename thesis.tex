@@ -15,7 +15,8 @@
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \lstloadlanguages{C++}
 \lstset{
-    stepnumber=1
+    stepnumber=1,
+    numbers=left
 }
 \lstdefinestyle{customcpp}{
   belowcaptionskip=1\baselineskip,
@@ -31,6 +32,9 @@
   stringstyle=\color{orange}
 }
 %\lstset{escapechar=@,style=customcpp}
+\newcommand{\includecode}[1]{
+    \lstinputlisting[escapechar=, style=customcpp]{#1}
+}
 
 \usepackage{graphicx}         % képekhez
 \usepackage{setspace}         % sorköz
