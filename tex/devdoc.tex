@@ -115,7 +115,29 @@ this counter is greater than 0.
 
 \subsection*{Stepping}
 
+% TODO
+
 \subsection*{Command matching}
+
+Users of any software will want to do a particular task with less and less
+effort as they get more experience with the tool. For a command line tool like
+Metadebugger, this need basically boils down to typing as few characters as
+possible.
+
+To aid this, an algorithm similar to gdb's command matching was implemented.
+
+If the user enters a prefix of a command which uniquely identifies the command
+(so there is no other command with that same prefix), than that command should
+be executed. In Metadebugger some commands also have aliases (for example, a
+shortened alias for the command \lstinline$"backtrace"$ is \lstinline$bt$). The
+the entered command should also be accepted when it is not a prefix for a
+unique command, but all possible candidate commands are aliases for the same
+command. For example the input \lstinline$"b"$ should be accepted as a command
+for backtrace, even though it is not a unique prefix.
+
+Pseudocode for the algorithm:
+
+\lstinputlisting[language=C++]{src/command_matching.cpp}
 
 \section{Class hierarchy}
 
