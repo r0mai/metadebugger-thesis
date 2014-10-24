@@ -5,7 +5,7 @@
 
 \section{Algorithms and data structures used}
 
-\subsection*{The representation of a metaprogram}
+\subsection{The representation of a metaprogram}
 
 C++ template metaprogramming can be seen as a form of purely functional
 programming. TODOCITE In functional programming a program's main components
@@ -27,7 +27,7 @@ to a type will be a TempateInstantiation event (as it is instantiated for the
 first time by the compiler). The following references will reuse the already
 created type, so those become Memoization events.
 
-\subsection*{Graph filtering}
+\subsection{Graph filtering}
 
 The underlying C++ compiler emits a lot of instantiation events which don't
 have real value to the user. These events need to be filtered out from the
@@ -88,7 +88,7 @@ with a graph, where all edges are enabled.
         these get filtered out as well.
 \end{enumerate}
 
-\subsection*{Forwardtrace}
+\subsection{Forwardtrace}
 
 When at some point the user wants to see what will happen in the future with
 the current type it is the eaisest to issue a forwardtrace command. Here is
@@ -113,11 +113,11 @@ element in the vector counts how many elements are there in the stack with that
 particular depth. For every depth, the algorithm prints \lstinline$'|'$ when
 this counter is greater than 0.
 
-\subsection*{Stepping}
+\subsection{Stepping}
 
 % TODO
 
-\subsection*{Command matching}
+\subsection{Command matching}
 
 Users of any software will want to do a particular task with less and less
 effort as they get more experience with the tool. For a command line tool like
@@ -146,7 +146,7 @@ Pseudocode for the algorithm:
 
 \section{Libraries used}
 
-\subsection*{Boost\cite{boost}}
+\subsection{Boost\cite{boost}}
 
 Boost is a set of open source C++ libraries that provide ready to use solutions
 to common tasks. In Metadebugger several Boost libraries are being used:
@@ -202,7 +202,7 @@ to common tasks. In Metadebugger several Boost libraries are being used:
 
 \end{description}
 
-\subsection*{Just\cite{just}}
+\subsection{Just\cite{just}}
 
 Just is a collection of lightweight C++ libraries. The following Just libraries
 are used in Metadebugger:
@@ -218,20 +218,20 @@ are used in Metadebugger:
         Metadebugger uses just::test to create unit and integration test cases.
 \end{description}
 
-\subsection*{Clang\cite{clang}}
+\subsection{Clang\cite{clang}}
 
 Clang is a C++ frontend for LLVM. Together they form a highly customizable C++
 compiler. Clang is used to compile the source code given as an input to
 Metadebugger.
 
-\subsection*{Templight\cite{templight}}
+\subsection{Templight\cite{templight}}
 
 Templight (in its current form) is a source code patch to Clang. With
 Templight, Clang is able to generate output about the template instantiation
 steps during compilation. Metadebugger takes this output and creates the
 necesseary data structures to be able to simulate the compilation.
 
-\subsection*{Readline\cite{readline}}
+\subsection{Readline\cite{readline}}
 
 The Readline library is the de facto standard library used to handle user
 inputs in software that uses an interactive command line interface.

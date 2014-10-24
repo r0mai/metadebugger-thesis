@@ -1,4 +1,4 @@
-\subsection*{evaluate}
+\subsection{evaluate}
 
 Usage: \lstinline$evaluate [-full] [<type>]$
 
@@ -16,7 +16,7 @@ Unlike metashell, evaluate doesn't use metashell::format to avoid cluttering
 the debugged metaprogram with unrelated code. If you need formatting, you can
 explicitly enter \lstinline$metashell::format< <type> >::type$ for the same effect.
 
-\subsection*{step}
+\subsection{step}
 
 Usage: \lstinline$step [over] [n]$
 
@@ -27,7 +27,7 @@ Negative n means step the program backwards.
 
 Use of the \lstinline$over$ qualifier will jump over sub instantiations.
 
-\subsection*{rbreak}
+\subsection{rbreak}
 
 Usage: \lstinline$rbreak <regex>$
 
@@ -35,7 +35,7 @@ Add breakpoint for all types matching \lstinline$<regex>$.
 
 
 
-\subsection*{continue}
+\subsection{continue}
 
 Usage: \lstinline$continue [n]$
 
@@ -45,7 +45,7 @@ The program is continued until the nth breakpoint or the end of the program
 is reached. n defaults to 1 if not specified.
 Negative n means continue the program backwards.
 
-\subsection*{forwardtrace}
+\subsection{forwardtrace}
 
 Usage: \lstinline$forwardtrace|ft [n]$
 
@@ -54,7 +54,7 @@ Print forwardtrace from the current point.
 The n specifier limits the depth of the trace. If n is not specified, then the
 trace depth is unlimited.
 
-\subsection*{backtrace}
+\subsection{backtrace}
 
 Usage: \lstinline$backtrace|bt $
 
@@ -62,7 +62,7 @@ Print backtrace from the current point.
 
 
 
-\subsection*{help}
+\subsection{help}
 
 Usage: \lstinline$help [<command>]$
 
@@ -70,7 +70,7 @@ Show help for commands.
 
 If <command> is not specified, show a list of all available commands.
 
-\subsection*{quit}
+\subsection{quit}
 
 Usage: \lstinline$quit $
 
