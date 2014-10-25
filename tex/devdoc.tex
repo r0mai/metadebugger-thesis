@@ -115,7 +115,46 @@ this counter is greater than 0.
 
 \subsection{Stepping}
 
-% TODO
+The algorithm for basic stepping is very similiar to forwardtrace: in it's core
+it is also a depth first traversal of the underlying call graph. There are two
+other extra things step has to be able to do:
+
+\begin{enumerate}
+    \item
+        Stop at any point in the traversal, so the user can inspect the current
+        state of the metaprogram.
+    \item
+        Going backwards in the traversal. This happens, when the user calls the
+        step command with a negative argument.
+\end{enumerate}
+
+Stopping at any point is achieved by creating a \lstinline$state_t$ structure
+which describes the current state of the metaprogram. It was put in the
+metaprogram class' scope, and a \lstinline$void metaprogram::step()$ function
+was created which does a single iteration of the depth first traversal by
+updating the state structure. The \lstinline$state_t$ struct and the step
+function:
+
+\includecode{src/metaprogram_state_t.hpp}
+
+The other extra feature of stepping is going backwards. A
+\lstinline$void metaprogram::step_back()$ functions was created which also
+updates the state struct, but does the opposite of \lstinline$step()$. This
+means, that if \lstinline$step()$ was called from state A and resulted in state
+B, then calling \lstinline$step_back()$ from state B will result in state A.
+The two endpoint states (when nothing has been discovered and when every
+reachable vertex were discovered) are exceptions from this rule.
+
+When step is executing, it marks the changes it made into the state into a
+\lstinline$rollback_t$ structure and pushes them into a stack:
+
+\includecode{src/metaprogram_rollback_t.hpp}
+
+\lstinline$step_back()$ simply picks pops the top element from the stack, and
+restores the state change the last \lstinline$step()$ did based on the rollback
+structure.
+
+% TODO actual algorithms and state diagramm
 
 \subsection{Command matching}
 
