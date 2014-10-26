@@ -12,7 +12,52 @@ metaprogramming in C++.
 
 \section{Installation}
 
+Metashell supports all major operating systems. In this section, installation
+instructions only for Linux is described.
+
+\subsection{Dependencies}
+
+Install the dependent libraries and tools:
+
+\begin{itemize}
+    \item Readline
+    \item Termcap
+    \item CMake
+\end{itemize}
+
+Build Clang with Templight\cite{templight}:
+
+\begin{itemize}
+    \item \lstinline$mkdir build$
+    \item \lstinline$cd build$
+    \item \lstinline$cmake ../llvm -DLIBCLANG_BUILD_STATIC=ON$
+    \item \lstinline$make clang$
+    \item \lstinline$make libclang$
+    \item \lstinline$make libclang_static$
+\end{itemize}
+
+\subsection{Building}
+
+Now compile Metashell. In the source directory run the following commands:
+
+\begin{itemize}
+    \item \lstinline$mkdir bin$
+    \item \lstinline$cd bin$
+    \item \lstinline$cmake ..$
+    \item \lstinline$make$
+\end{itemize}
+
+\subsection{Running tests}
+
+To make sure everything will work correctly, running tests is advised:
+
+\begin{itemize}
+    \item \lstinline$test/metashell_test$
+\end{itemize}
+
 \section{Basic Usage}
+
+%TODO how to start the program: ./app/metashell
 
 \section{Command reference}
 
