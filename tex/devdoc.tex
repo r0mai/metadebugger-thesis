@@ -146,7 +146,7 @@ The two endpoint states (when nothing has been discovered and when every
 reachable vertex were discovered) are exceptions from this rule.
 
 When step is executing, it marks the changes it made into the state into a
-\lstinline$rollback_t$ structure and pushes them into a stack:
+\lstinline$rollback_t$ structure and pushes them onto a stack:
 
 \includecode{src/metaprogram_rollback_t.hpp}
 
