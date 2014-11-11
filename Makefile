@@ -5,7 +5,7 @@ PNGS=$(wildcard img/*.png)
 EPSS=$(patsubst %.png,%.eps,$(PNGS))
 
 img/%.eps: img/%.png
-	convert $< $@
+	convert -compress Lossless $< $@
 
 .PHONY: my_all
 my_all: $(EPSS) pdf
