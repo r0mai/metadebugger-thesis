@@ -16,8 +16,18 @@ metaprogramming in C++.
 
 \section{Installation}
 
-Metashell supports all major operating systems. In this section, installation
-instructions only for Linux is described.
+Metashell supports the following platforms:
+\begin{itemize}
+    \item Linux
+    \item FreeBSD
+    \item OpenBSD
+    \item OS X
+    \item Windows
+\end{itemize}
+
+In this section, installation instructions only for Linux is described.
+Instructions for other platforms can be found in the README.md file shipped
+with Metashell.
 
 \subsection{Dependencies}
 
@@ -28,20 +38,29 @@ Install the dependent libraries and tools:
     \item CMake (2.18.12.2 or newer)
 \end{itemize}
 
+Acquire the source code from Github\cite{github} or any release site, and cd
+into the source directory:
+
+\begin{itemize}
+    \item \lstinline$cd metashell$
+\end{itemize}
+
 Build Clang with Templight\cite{templight}:
 
 \begin{itemize}
+    \item \lstinline$cd templight$
     \item \lstinline$mkdir build$
     \item \lstinline$cd build$
     \item \lstinline$cmake ../llvm -DLIBCLANG_BUILD_STATIC=ON$
     \item \lstinline$make clang$
     \item \lstinline$make libclang$
     \item \lstinline$make libclang_static$
+    \item \lstinline$cd ..$
 \end{itemize}
 
 \subsection{Building}
 
-Now compile Metashell. In the source directory run the following commands:
+Now compile Metashell:
 
 \begin{itemize}
     \item \lstinline$mkdir bin$
@@ -49,6 +68,8 @@ Now compile Metashell. In the source directory run the following commands:
     \item \lstinline$cmake ..$
     \item \lstinline$make$
 \end{itemize}
+
+%TODO what kind of files appeared?
 
 \subsection{Running tests}
 
