@@ -1,10 +1,10 @@
 \subsection{evaluate}
 
-Usage: \lstinline$evaluate [-full] [<type>]$
+Usage: \verb$evaluate [-full] [<type>]$
 
 Evaluate and start debugging a new metaprogram.
 
-Evaluating a metaprogram using the \lstinline$-full$ qualifier will expand all
+Evaluating a metaprogram using the \verb$-full$ qualifier will expand all
 Memoization events.
 
 If called without <type>, then the last evaluated metaprogram will be
@@ -14,30 +14,30 @@ Previous breakpoints are cleared.
 
 Unlike metashell, evaluate doesn't use metashell::format to avoid cluttering
 the debugged metaprogram with unrelated code. If you need formatting, you can
-explicitly enter \lstinline$metashell::format< <type> >::type$ for the same effect.
+explicitly enter \verb$metashell::format< <type> >::type$ for the same effect.
 
 \subsection{step}
 
-Usage: \lstinline$step [over] [n]$
+Usage: \verb$step [over] [n]$
 
 Step the program.
 
 Argument n means step n times. n defaults to 1 if not specified.
 Negative n means step the program backwards.
 
-Use of the \lstinline$over$ qualifier will jump over sub instantiations.
+Use of the \verb$over$ qualifier will jump over sub instantiations.
 
 \subsection{rbreak}
 
-Usage: \lstinline$rbreak <regex>$
+Usage: \verb$rbreak <regex>$
 
-Add breakpoint for all types matching \lstinline$<regex>$.
+Add breakpoint for all types matching \verb$<regex>$.
 
 
 
 \subsection{continue}
 
-Usage: \lstinline$continue [n]$
+Usage: \verb$continue [n]$
 
 Continue program being debugged.
 
@@ -47,7 +47,7 @@ Negative n means continue the program backwards.
 
 \subsection{forwardtrace}
 
-Usage: \lstinline$forwardtrace|ft [n]$
+Usage: \verb$forwardtrace|ft [n]$
 
 Print forwardtrace from the current point.
 
@@ -56,7 +56,7 @@ trace depth is unlimited.
 
 \subsection{backtrace}
 
-Usage: \lstinline$backtrace|bt $
+Usage: \verb$backtrace|bt $
 
 Print backtrace from the current point.
 
@@ -64,7 +64,7 @@ Print backtrace from the current point.
 
 \subsection{help}
 
-Usage: \lstinline$help [<command>]$
+Usage: \verb$help [<command>]$
 
 Show help for commands.
 
@@ -72,7 +72,7 @@ If <command> is not specified, show a list of all available commands.
 
 \subsection{quit}
 
-Usage: \lstinline$quit $
+Usage: \verb$quit $
 
 Quit metadebugger.
 

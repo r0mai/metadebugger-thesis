@@ -15,7 +15,7 @@ get their parameters as template parameters, and return values by defining
 member types or compile time constants based on the template parameters.
 
 For a specific metaprogram, Metadebugger represents only the metaprogram's call
-graph. For example instantiating \lstinline|int_<fib<5>::value>| would be
+graph. For example instantiating \verb|int_<fib<5>::value>| would be
 represented by the following graph in Metadebugger:
 
 \includegraphics[width=\textwidth]{img/fib5_call_graph.eps}
@@ -50,9 +50,9 @@ following properties:
         Not currently implemented, but these unused parts of the graph can be
         given to the advanced users, if they're interested.
     \item
-        In boost's graph implementation, \lstinline|vertex_descriptor|
+        In boost's graph implementation, \verb|vertex_descriptor|
         objects used to refer to vertices of the graph are unsigned integers.
-        The documentation promises, that these \lstinline|vertex_descriptor|
+        The documentation promises, that these \verb|vertex_descriptor|
         start from 0 and go up from there for every vertex added to the graph.
         The algorithms in Metadebugger relies heavily on this handy property.
         Removing vertices from the graph would break this continous indexing.
@@ -67,7 +67,7 @@ with a graph, where all edges are enabled.
         simpler.
     \item
         Enable edges going from the root vertex for which the
-        \lstinline|point_of_instantiation| edge property matches the currently
+        \verb|point_of_instantiation| edge property matches the currently
         entered line. This is to filter out instantiation subtrees, which were
         not initiated by the type entered by the user.
     \item
@@ -79,7 +79,7 @@ with a graph, where all edges are enabled.
         Clang generates a TemplateInstantiation and a Memoization event for the
         result type. Disable the Memoization one. In this process, the name of
         the vertex pointed by these two edges is trimmed too, so the
-        \lstinline|metashell::wrap| wrapper doesn't clutter the result.
+        \verb|metashell::wrap| wrapper doesn't clutter the result.
     \item
         Clang sometimes triggers multiple Memoization events for the same type
         instantiated from a single type, and thus equivalent parallel edges
@@ -93,7 +93,7 @@ with a graph, where all edges are enabled.
 When at some point the user wants to see what will happen in the future with
 the current type it is the eaisest to issue a forwardtrace command. Here is
 what the forwardtrace looks like at the very beginning of the
-\lstinline|int_<fib<5>::value|:
+\verb|int_<fib<5>::value|:
 
 \bigskip
 
@@ -107,10 +107,10 @@ of the current depth of the traversal in the stack, so the depth of the
 identation is known when printing a line.
 
 For better readability, it is also required to know for every depth less than
-the current depth if the algorithm should print a \lstinline$'|'$ or not. This
+the current depth if the algorithm should print a \verb$'|'$ or not. This
 is achieved by having a vector of counters from 0 to the current depth. Each
 element in the vector counts how many elements are there in the stack with that
-particular depth. For every depth, the algorithm prints \lstinline$'|'$ when
+particular depth. For every depth, the algorithm prints \verb$'|'$ when
 this counter is greater than 0.
 
 \subsection{Stepping}
@@ -128,30 +128,30 @@ other extra things step has to be able to do:
         step command with a negative argument.
 \end{enumerate}
 
-Stopping at any point is achieved by creating a \lstinline$state_t$ structure
+Stopping at any point is achieved by creating a \verb$state_t$ structure
 which describes the current state of the metaprogram. It was put in the
-metaprogram class' scope, and a \lstinline$void metaprogram::step()$ function
+metaprogram class' scope, and a \verb$void metaprogram::step()$ function
 was created which does a single iteration of the depth first traversal by
-updating the state structure. The \lstinline$state_t$ struct and the step
+updating the state structure. The \verb$state_t$ struct and the step
 function:
 
 \includecode{src/metaprogram_state_t.hpp}
 
 The other extra feature of stepping is going backwards. A
-\lstinline$void metaprogram::step_back()$ functions was created which also
-updates the state struct, but does the opposite of \lstinline$step()$. This
-means, that if \lstinline$step()$ was called from state A and resulted in state
-B, then calling \lstinline$step_back()$ from state B will result in state A.
+\verb$void metaprogram::step_back()$ functions was created which also
+updates the state struct, but does the opposite of \verb$step()$. This
+means, that if \verb$step()$ was called from state A and resulted in state
+B, then calling \verb$step_back()$ from state B will result in state A.
 The two endpoint states (when nothing has been discovered and when every
 reachable vertex were discovered) are exceptions from this rule.
 
 When step is executing, it marks the changes it made into the state into a
-\lstinline$rollback_t$ structure and pushes them onto a stack:
+\verb$rollback_t$ structure and pushes them onto a stack:
 
 \includecode{src/metaprogram_rollback_t.hpp}
 
-\lstinline$step_back()$ simply picks pops the top element from the stack, and
-restores the state change the last \lstinline$step()$ did, based on the
+\verb$step_back()$ simply picks pops the top element from the stack, and
+restores the state change the last \verb$step()$ did, based on the
 rollback structure.
 
 % TODO actual algorithms and state diagramm
@@ -168,10 +168,10 @@ To aid this, an algorithm similar to gdb's command matching was implemented.
 If the user enters a prefix of a command which uniquely identifies the command
 (so there is no other command with that same prefix), than that command should
 be executed. In Metadebugger some commands also have aliases (for example, a
-shortened alias for the command \lstinline$"backtrace"$ is \lstinline$bt$). The
+shortened alias for the command \verb$"backtrace"$ is \verb$bt$). The
 the entered command should also be accepted when it is not a prefix for a
 unique command, but all possible candidate commands are aliases for the same
-command. For example the input \lstinline$"b"$ should be accepted as a command
+command. For example the input \verb$"b"$ should be accepted as a command
 for backtrace, even though it is not a unique prefix.
 
 Pseudocode for the algorithm:
@@ -207,7 +207,7 @@ to common tasks. In Metadebugger several Boost libraries are being used:
         But at the same time, sometimes it is useful to have an object state,
         in which the object is invalid in purpose. Boost.Optional provides an
         easy way to turn any type into a type which can have an invalid state
-        called \lstinline[language=C++]|boost::none|.
+        called \verb|boost::none|.
     \item[Boost.PropertyTree] \hfill \\
         The Boost.PropertyTree library provides a data structure that stores an
         arbitrarily deeply nested tree of values, indexed at each level by some
