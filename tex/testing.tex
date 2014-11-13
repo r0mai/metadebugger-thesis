@@ -8,36 +8,15 @@ integration tests.
 
 \section{Test plan}
 
-\subsection{Black-box testing}
-
-The following functionalities and program behaviors can be tested using
-black-box testing method:
-
-\begin{itemize}
-    \item Entered commands
-    \begin{itemize}
-        \item Valid commands produce expected outputs
-        \item Invalid commands are rejected with an appropriate error message
-    \end{itemize}
-    \item Only the appropriate lines are appended to the command history
-    %TODO more?
-\end{itemize}
-
-\subsection{White-box testing}
-
-The classes and functions created were implemented with white-box testing in
-mind. This means, that the functionality is broken down into small standalone
-pieces, each testable on its own.
-
 %TODO
 
-\section{Unit tests}
+\section{Unit and integration tests}
 
-%TODO
+143 unit and integration tests were written. Both types of tests used the Just
+test library and are compiled into the same test executable:
+\verb$bin/test/metashell_tes$
 
-\section{Integration tests}
-
-%TODO
+Here is a list of these tests, with short descriptions:
 
 \begin{description}
     \item[asd] \hfill \\
