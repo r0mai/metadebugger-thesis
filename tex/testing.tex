@@ -172,12 +172,30 @@ Here is a list of these tests, with short descriptions:
     \item[\texttt{test\_mdb\_rbreak\_with\_valid\_regex\_in\_full\_mode\_match\_only\_root}:]
     \item[\texttt{test\_mdb\_rbreak\_with\_valid\_regex\_in\_full\_mode\_match\_also\_root}:]
     \item[\texttt{test\_metaprogram\_constuctor}:]
+        Tests to see if \texttt{metaprogram}'s constructor creates an object
+        with the expected empty state.
     \item[\texttt{test\_metaprogram\_with\_single\_vertex}:]
+        Tests metaprogram's graph representation and state stay correct while
+        calling the \texttt{step()} function with only a single non root
+        vertex.
     \item[\texttt{test\_metaprogram\_with\_single\_vertex\_parallel\_edge}:]
+        Tests metaprogram's graph representation and state stay correct while
+        calling the \texttt{step()} function with only a single non root
+        vertex, but with multiple edges connecting it to the root node.
     \item[\texttt{test\_metaprogram\_step\_back\_with\_single\_vertex}:]
+        Tests metaprogram's graph representation and state stay correct while
+        calling the \texttt{step\_back()} function with only a single non root
+        vertex.
     \item[\texttt{test\_metaprogram\_step\_back\_with\_single\_vertex\_parallel\_edge}:]
+        Tests metaprogram's graph representation and state stay correct while
+        calling the \texttt{step\_back()} function with only a single non root
+        vertex, but with multiple edges connecting it to the root node.
     \item[\texttt{test\_metaprogram\_constuctor\_full\_mode\_true}:]
+        Tests \texttt{metaprogram::is\_in\_full\_mode()} when passing
+        \texttt{true} for full mode in the constructor.
     \item[\texttt{test\_metaprogram\_constuctor\_full\_mode\_false}:]
+        Tests \texttt{metaprogram::is\_in\_full\_mode()} when passing
+        \texttt{false} for full mode in the constructor.
     \item[\texttt{test\_mdb\_backtrace\_without\_evaluation}:]
         Tests if the backtrace command prints
         \texttt{"Metaprogram not evaluated yet"} when no metaprogram has been
