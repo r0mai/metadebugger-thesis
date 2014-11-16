@@ -66,11 +66,14 @@ Here is a list of these tests, with short descriptions:
     \item[\texttt{test\_templight\_xml\_parse\_missing\_pipe\_in\_file\_location\_2}:]
     \item[\texttt{test\_templight\_xml\_parse\_unknown\_kind}:]
     \item[\texttt{test\_mdb\_shell\_is\_stopped\_false\_by\_default}:]
+        Tests wheter the \texttt{mdb\_shell::stopped()} returns \texttt{false}
+        right after construcion.
     \item[\texttt{test\_mdb\_shell\_empty\_lines}:]
     \item[\texttt{test\_mdb\_shell\_identical\_lines\_in\_history}:]
     \item[\texttt{test\_mdb\_shell\_identical\_all\_space\_lines\_in\_history}:]
     \item[\texttt{test\_mdb\_shell\_skips\_empty\_lines}:]
     \item[\texttt{test\_mdb\_shell\_prompt}:]
+        Tests wheter \texttt{mdb\_shell::prompt()} returns \texttt{"(mdb) "}.
     \item[\texttt{test\_mdb\_forwardtrace\_without\_evaluation}:]
         Tests if the forwardtrace command prints
         \texttt{"Metaprogram not evaluated yet"} when no metaprogram has been
@@ -95,18 +98,20 @@ Here is a list of these tests, with short descriptions:
     \item[\texttt{test\_mdb\_forwardtrace\_ft\_from\_step\_2\_with\_limit\_2}:]
     \item[\texttt{test\_mdb\_forwardtrace\_ft\_from\_step\_2\_with\_limit\_100}:]
     \item[\texttt{test\_mdb\_forwardtrace\_from\_root\_on\_narrow\_terminal}:]
+        Test forwardtrace output on a narrow terminal. Wrapping should occur
+        at the terminal boundary.
     \item[\texttt{test\_mdb\_forwardtrace\_on\_extremely\_narrow\_terminal\_w0}:]
+        Test forwardtrace output on a zero character wide terminal.
     \item[\texttt{test\_mdb\_forwardtrace\_on\_extremely\_narrow\_terminal\_w1}:]
-    \item[\texttt{test\_mdb\_command\_handler\_map\_command\_selection\_1}:]
-    \item[\texttt{test\_mdb\_command\_handler\_map\_command\_selection\_2}:]
-    \item[\texttt{test\_mdb\_command\_handler\_map\_command\_selection\_3}:]
-    \item[\texttt{test\_mdb\_command\_handler\_map\_command\_selection\_4}:]
-    \item[\texttt{test\_mdb\_command\_handler\_map\_command\_selection\_5}:]
-    \item[\texttt{test\_mdb\_command\_handler\_map\_command\_selection\_6}:]
-    \item[\texttt{test\_mdb\_command\_handler\_map\_command\_selection\_7}:]
-    \item[\texttt{test\_mdb\_command\_handler\_map\_command\_selection\_8}:]
+        Test forwardtrace output on a one character wide terminal.
+    \item[\texttt{test\_mdb\_command\_handler\_map\_command\_selection\_1..8}:]
+        Eight test cases, which test the command selection algorithm. Various
+        command maps are constructed and queried. All normal and special cases
+        are handled.
     \item[\texttt{test\_mdb\_command\_handler\_map\_argument\_passing}:]
     \item[\texttt{test\_instantiation\_kind\_print}:]
+        Tests the \texttt{to\_string(instantiation\_kind)} for all possible
+        input values.
     \item[\texttt{test\_is\_template\_type\_primitive\_types}:]
     \item[\texttt{test\_is\_template\_type\_array\_type\_of\_non\_template\_types}:]
     \item[\texttt{test\_is\_template\_type\_pointer\_to\_non\_template\_types}:]
