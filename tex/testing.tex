@@ -144,8 +144,16 @@ Here is a list of these tests, with short descriptions:
         \texttt{"Metaprogram not evaluated yet"} when no metaprogram has been
         evalutated.
     \item[\texttt{test\_mdb\_rbreak\_with\_no\_arguments}:]
+        Tests if the rbreak command prints
+        \texttt{"Argument expected"} when no argument is given.
     \item[\texttt{test\_mdb\_rbreak\_with\_no\_arguments\_with\_trailing\_whitespace}:]
+        Tests if the rbreak command prints
+        \texttt{"Argument expected"} when no argument is given but there are
+        trailing whitespaces.
     \item[\texttt{test\_mdb\_rbreak\_with\_invalid\_regex}:]
+        Tests if the rbreak command prints
+        \texttt{"<regex> is not a valid regex"}, where <regex> is the entered
+        regular expression, when it has some syntatical error.
     \item[\texttt{test\_mdb\_rbreak\_with\_valid\_regex\_no\_match}:]
     \item[\texttt{test\_mdb\_rbreak\_with\_valid\_regex\_with\_one\_match}:]
     \item[\texttt{test\_mdb\_rbreak\_with\_valid\_regex\_with\_two\_matches}:]
@@ -175,10 +183,19 @@ Here is a list of these tests, with short descriptions:
         \texttt{"Argument parsing failed"} when it is called with a invalid
         arguments.
     \item[\texttt{test\_mdb\_backtrace\_bt\_alias}:]
+        Tests if the \texttt{"bt"} alias of the backtrace command is
+        accepcted.
     \item[\texttt{test\_mdb\_evaluate\_int}:]
     \item[\texttt{test\_mdb\_evaluate\_fib\_10}:]
     \item[\texttt{test\_mdb\_evaluate\_no\_arguments\_no\_evaluation}:]
+        Tests if the evaluate command prints
+        \texttt{"Nothing has been evaluated yet."} when no metaprogram has been
+        evaluated and it is called with no arguments.
     \item[\texttt{test\_mdb\_evaluate\_no\_arguments\_with\_trailing\_spaces\_no\_evaluation}:]
+        Tests if the evaluate command prints
+        \texttt{"Nothing has been evaluated yet."} when no metaprogram has been
+        evaluated and it is called with no arguments, but with trailing
+        whitespaces.
     \item[\texttt{test\_mdb\_evaluate\_failure\_will\_reset\_metaprogram\_state}:]
     \item[\texttt{test\_mdb\_evaluate\_missing\_argument\_will\_run\_last\_metaprogram}:]
     \item[\texttt{test\_mdb\_evaluate\_missing\_argument\_will\_reset\_metaprogram\_state}:]
