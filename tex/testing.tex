@@ -56,15 +56,33 @@ Here is a list of these tests, with short descriptions:
     \item[\texttt{test\_mdb\_command\_full\_description\_empty\_long\_description}:]
     \item[\texttt{test\_mdb\_command\_full\_description\_non\_empty\_long\_description}:]
     \item[\texttt{test\_templight\_xml\_parse\_empty}:]
+        Tests \texttt{metaprogram::create\_from\_xml\_string()} with a templight
+        xml without any events.
     \item[\texttt{test\_templight\_xml\_parse\_one\_node\_with\_different\_kinds}:]
+        Tests \texttt{metaprogram::create\_from\_xml\_string()} with a templight
+        xml with single event bad various instantiation kinds.
     \item[\texttt{test\_templight\_xml\_parse\_one\_node\_with\_different\_types}:]
+        Tests \texttt{metaprogram::create\_from\_xml\_string()} with a templight
+        xml with single event bad various types and xml escape sequences.
     \item[\texttt{test\_templight\_xml\_parse\_two\_nested\_node}:]
+        Tests \texttt{metaprogram::create\_from\_xml\_string()} with a templight
+        xml with two nested events.
     \item[\texttt{test\_templight\_xml\_parse\_two\_sequential\_node}:]
+        Tests \texttt{metaprogram::create\_from\_xml\_string()} with a templight
+        xml with two sequential events.
     \item[\texttt{test\_templight\_xml\_parse\_starting\_with\_template\_end}:]
+        Tests \texttt{metaprogram::create\_from\_xml\_string()} failure with a
+        templight xml starting with a TemplateEnd event.
     \item[\texttt{test\_templight\_xml\_parse\_without\_template\_end}:]
-    \item[\texttt{test\_templight\_xml\_parse\_missing\_pipe\_in\_file\_location\_1}:]
-    \item[\texttt{test\_templight\_xml\_parse\_missing\_pipe\_in\_file\_location\_2}:]
+        Tests \texttt{metaprogram::create\_from\_xml\_string()} failure with a
+        templight xml with a missing TemplateEnd event.
+    \item[\texttt{test\_templight\_xml\_parse\_missing\_pipe\_in\_file\_location\_1..2}:]
+        Two tests, which test \texttt{metaprogram::create\_from\_xml\_string()}
+        failure with a templight xml with a syntax error in the file location
+        string.
     \item[\texttt{test\_templight\_xml\_parse\_unknown\_kind}:]
+        Tests \texttt{metaprogram::create\_from\_xml\_string()} failure with a
+        templight xml with an invalid instantiation kind.
     \item[\texttt{test\_mdb\_shell\_is\_stopped\_false\_by\_default}:]
         Tests wheter the \texttt{mdb\_shell::stopped()} returns \texttt{false}
         right after construcion.
