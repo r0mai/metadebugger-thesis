@@ -237,7 +237,13 @@ Here is a list of these tests, with short descriptions:
         Tests if the \texttt{"bt"} alias of the backtrace command is
         accepcted.
     \item[\texttt{test\_mdb\_evaluate\_int}:]
+        Test if the command \texttt{"evaluate int"} produces the output
+        \texttt{"Metaprogram started"} and result of the evaluation is
+        \texttt{int}.
     \item[\texttt{test\_mdb\_evaluate\_fib\_10}:]
+        Test if the command \texttt{"evaluate int\_<fib<10>::value>"} produces
+        the output \texttt{"Metaprogram started"} and result of the evaluation
+        is \texttt{int\_<55>}.
     \item[\texttt{test\_mdb\_evaluate\_no\_arguments\_no\_evaluation}:]
         Tests if the evaluate command prints
         \texttt{"Nothing has been evaluated yet."} when no metaprogram has been
@@ -248,13 +254,26 @@ Here is a list of these tests, with short descriptions:
         evaluated and it is called with no arguments, but with trailing
         whitespaces.
     \item[\texttt{test\_mdb\_evaluate\_failure\_will\_reset\_metaprogram\_state}:]
+        If an evaluation fails for some reason, then metadebugger should act
+        like no metaprogram has been evaluated.
     \item[\texttt{test\_mdb\_evaluate\_missing\_argument\_will\_run\_last\_metaprogram}:]
+        Test if the re-evaluation semantics of the \texttt{evaluate} command
+        works.
     \item[\texttt{test\_mdb\_evaluate\_missing\_argument\_will\_reset\_metaprogram\_state}:]
+        Test if re-evaluation resets the metaprogram state to its start state,
+        even if it was stepped once.
     \item[\texttt{test\_mdb\_evaluate\_filters\_similar\_edges}:]
+        Check if the graph filtering algorithm detailed in
+        \ref{graph-filtering} works correctly.
     \item[\texttt{test\_mdb\_evaluate\_clears\_breakpoints}:]
+        Test if evaluating a metaprogram clears all breakpoints.
     \item[\texttt{test\_mdb\_evaluate\_reevaluate\_clears\_breakpoints}:]
+        Test if re-evaluating a metaprogram clears all breakpoints.
     \item[\texttt{test\_mdb\_evaluate\_failure\_clears\_breakpoints}:]
+        Test if an evaluation failure clears all breakpoints.
     \item[\texttt{test\_readme\_continue\_abbreviated\_as\_c}:]
+        In \texttt{README.md} there is a suggestion, that the user can
+        abbreviate \texttt{continue} as \texttt{c}. Test to make sure it works.
     \item[\texttt{test\_readme\_getting\_started}:]
         Tests the procedure described in the Getting Started section of the
         README.md file.

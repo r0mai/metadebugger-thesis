@@ -27,7 +27,7 @@ to a type will be a TempateInstantiation event (as it is instantiated for the
 first time by the compiler). The following references will reuse the already
 created type, so those become Memoization events.
 
-\subsection{Graph filtering}
+\subsection{Graph filtering} \label{graph-filtering}
 
 The underlying C++ compiler emits a lot of instantiation events which don't
 have real value to the user. These events need to be filtered out from the
