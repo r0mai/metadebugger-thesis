@@ -24,21 +24,48 @@ Here is a list of these tests, with short descriptions:
         \texttt{"Metaprogram not evaluated yet"} when no metaprogram has been
         evalutated.
     \item[\texttt{test\_mdb\_step\_fibonacci}:]
+        Test the output of the \texttt{step} command while executing the
+        fibonacci metaprogram.
     \item[\texttt{test\_mdb\_step\_2\_fibonacci}:]
+        Test the output of the \texttt{step 2} command while executing the
+        fibonacci metaprogram.
     \item[\texttt{test\_mdb\_step\_fibonacci\_twice}:]
+        Test the output of two \texttt{step} commands while executing the
+        fibonacci metaprogram.
     \item[\texttt{test\_mdb\_step\_fibonacci\_twice\_with\_empty\_second\_line}:]
+        Test the output of two \texttt{step} commands while executing the
+        fibonacci metaprogram. The second step command is issued implicitly
+        with an empty input.
     \item[\texttt{test\_mdb\_step\_fibonacci\_twice\_with\_space\_second\_line}:]
+        Test the output of two \texttt{step} commands while executing the
+        fibonacci metaprogram. The second step command is issued implicitly
+        with all whitespace input.
     \item[\texttt{test\_mdb\_step\_0\_fibonacci\_at\_start}:]
+        Test that the command \texttt{step 0} has no output if issued at the
+        start state.
     \item[\texttt{test\_mdb\_step\_0\_fibonacci\_after\_step}:]
+        Test that the command \texttt{step 0} outputs the current frame if it
+        is not at start state.
     \item[\texttt{test\_mdb\_step\_over\_the\_whole\_metaprogram\_one\_step}:]
+        Test what happens, when the command \texttt{step over} is issued at the
+        start state.
     \item[\texttt{test\_mdb\_step\_int\_non\_template\_type}:]
+        Test that \texttt{"(NonTemplateType)"} is printed correctly while
+        stepping through the \texttt{int} metaprogram.
     \item[\texttt{test\_mdb\_step\_over\_the\_whole\_metaprogram\_multiple\_steps}:]
+        Test that iteratively stepping througe a metaprogram works.
     \item[\texttt{test\_mdb\_step\_over\_the\_whole\_metaprogram\_multiple\_steps\_full\_mode}:]
+        Test that iteratively stepping througe a metaprogram works in full
+        mode.
     \item[\texttt{test\_mdb\_step\_minus\_1\_at\_start}:]
     \item[\texttt{test\_mdb\_step\_minus\_1\_after\_step}:]
     \item[\texttt{test\_mdb\_step\_minus\_1\_after\_step\_in\_full\_mode}:]
     \item[\texttt{test\_mdb\_step\_0\_at\_start}:]
+        Test that the command \texttt{step 0} has no output if issued at the
+        start state.
     \item[\texttt{test\_mdb\_step\_0\_at\_end}:]
+        Test that the command \texttt{step 0} has no output if issued at the
+        end state.
     \item[\texttt{test\_mdb\_step\_minus\_1\_after\_step\_2}:]
     \item[\texttt{test\_mdb\_step\_minus\_1\_after\_step\_2\_in\_full\_mode}:]
     \item[\texttt{test\_mdb\_step\_over\_fib\_from\_root}:]
@@ -136,10 +163,21 @@ Here is a list of these tests, with short descriptions:
         Tests the \texttt{to\_string(instantiation\_kind)} for all possible
         input values.
     \item[\texttt{test\_is\_template\_type\_primitive\_types}:]
+        Test that \texttt{is\_template\_type(const std::string\&)} returns
+        false when called with primitive type names.
     \item[\texttt{test\_is\_template\_type\_array\_type\_of\_non\_template\_types}:]
+        Test that \texttt{is\_template\_type(const std::string\&)} returns
+        \texttt{false} when called with arrays of various non template types.
     \item[\texttt{test\_is\_template\_type\_pointer\_to\_non\_template\_types}:]
+        Test that \texttt{is\_template\_type(const std::string\&)} returns
+        \texttt{false} when called with pointers to various non template types.
     \item[\texttt{test\_is\_template\_type\_templates}:]
+        Test that \texttt{is\_template\_type(const std::string\&)} returns
+        \texttt{true} when called with various template types.
     \item[\texttt{test\_is\_template\_type\_char\_literals}:]
+        Test that \texttt{is\_template\_type(const std::string\&)} returns
+        \texttt{true} when called with various template types with
+        \texttt{'<'} and \texttt{'>'} character literals.
     \item[\texttt{test\_mdb\_continue\_without\_evaluation}:]
         Tests if the continue command prints
         \texttt{"Metaprogram not evaluated yet"} when no metaprogram has been
@@ -224,11 +262,23 @@ Here is a list of these tests, with short descriptions:
         \texttt{"Metaprogram not evaluated yet"} when no metaprogram has been
         evalutated.
     \item[\texttt{test\_mdb\_backtrace\_unstepped\_fibonacci}:]
+        Test the output of the \texttt{backtrace} command in a fibonacci
+        metaprogram from its start state.
     \item[\texttt{test\_mdb\_backtrace\_when\_metaprogram\_finished}:]
+        Test the output of the \texttt{backtrace} command in a fibonacci
+        metaprogram from its last state.
     \item[\texttt{test\_mdb\_backtrace\_when\_metaprogram\_finished\_in\_full\_mode}:]
+        Test the output of the \texttt{backtrace} command in a fibonacci
+        metaprogram from its last state in full mode.
     \item[\texttt{test\_mdb\_backtrace\_1\_stepped\_fibonacci}:]
+        Test the output of the \texttt{backtrace} command in a fibonacci
+        metaprogram after it was stepped once.
     \item[\texttt{test\_mdb\_backtrace\_2\_stepped\_fibonacci}:]
+        Test the output of the \texttt{backtrace} command in a fibonacci
+        metaprogram after it was stepped twice.
     \item[\texttt{test\_mdb\_backtrace\_3\_stepped\_fibonacci}:]
+        Test the output of the \texttt{backtrace} command in a fibonacci
+        metaprogram after it was stepped three times.
     \item[\texttt{test\_mdb\_backtrace\_garbage\_argument}:]
         Tests if the backtrace command prints
         \texttt{"Argument parsing failed"} when it is called with a invalid
