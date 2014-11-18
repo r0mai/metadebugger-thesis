@@ -165,8 +165,13 @@ Here is a list of these tests, with short descriptions:
     \item[\texttt{test\_mdb\_continue\_to\_end\_and\_back\_to\_start\_in\_full\_mode}:]
     \item[\texttt{test\_mdb\_continue\_to\_one\_before\_end\_and\_back\_to\_start\_in\_full\_mode}:]
     \item[\texttt{test\_empty\_file\_location}:]
+        Test the \texttt{file\_location} class' default constructor.
     \item[\texttt{test\_file\_location\_construction}:]
+        Test the \texttt{file\_location} class'
+        \texttt{(std::string, int, int)} constructor.
     \item[\texttt{test\_file\_location\_equality}:]
+        Test \texttt{operator==(const file\_location\&, const file\_location\&)}
+        overloaded operator.
     \item[\texttt{test\_mdb\_rbreak\_without\_evaluated\_metaprogram}:]
         Tests if the rbreak command prints
         \texttt{"Metaprogram not evaluated yet"} when no metaprogram has been
