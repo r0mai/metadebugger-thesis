@@ -46,20 +46,20 @@ Acquire the source code from Github\cite{github} or any release site, and cd
 into the source directory:
 
 \begin{itemize}
-    \item \verb$cd metashell$
+    \item \texttt{cd metashell}
 \end{itemize}
 
 Build Clang with Templight\cite{templight}:
 
 \begin{itemize}
-    \item \verb$cd templight$
-    \item \verb$mkdir build$
-    \item \verb$cd build$
-    \item \verb$cmake ../llvm -DLIBCLANG_BUILD_STATIC=ON$
-    \item \verb$make clang$
-    \item \verb$make libclang$
-    \item \verb$make libclang_static$
-    \item \verb$cd ..$
+    \item \texttt{cd templight}
+    \item \texttt{mkdir build}
+    \item \texttt{cd build}
+    \item \texttt{cmake ../llvm -DLIBCLANG\_BUILD\_STATIC=ON}
+    \item \texttt{make clang}
+    \item \texttt{make libclang}
+    \item \texttt{make libclang\_static}
+    \item \texttt{cd ..}
 \end{itemize}
 
 \subsection{Building}
@@ -67,10 +67,10 @@ Build Clang with Templight\cite{templight}:
 Now compile Metashell:
 
 \begin{itemize}
-    \item \verb$mkdir bin$
-    \item \verb$cd bin$
-    \item \verb$cmake ..$
-    \item \verb$make$
+    \item \texttt{mkdir bin}
+    \item \texttt{cd bin}
+    \item \texttt{cmake ..}
+    \item \texttt{make}
 \end{itemize}
 
 %TODO what kind of files appeared?
@@ -80,17 +80,17 @@ Now compile Metashell:
 To make sure everything will work correctly, running tests is advised:
 
 \begin{itemize}
-    \item \verb$test/metashell_test$
+    \item \texttt{test/metashell\_test}
 \end{itemize}
 
 \section{Basic Usage}
 
-Start metashell by running \verb$app/metashell$.
+Start metashell by running \texttt{app/metashell}.
 
 \includegraphics[width=1\textwidth]{img/splash.eps}
 
 %TODO maybe mention, that "> " is metashell?
-After a splash screen is shown, an interactive shell with \verb$"> "$
+After a splash screen is shown, an interactive shell with \texttt{"> "}
 prompt string appears. This is the place, where the C++ code environment
 required by the metaprogram can be entered.
 
