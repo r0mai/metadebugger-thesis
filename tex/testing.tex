@@ -58,8 +58,17 @@ Here is a list of these tests, with short descriptions:
         Test that iteratively stepping througe a metaprogram works in full
         mode.
     \item[\texttt{test\_mdb\_step\_minus\_1\_at\_start}:]
+        Test that the command \texttt{step -1} produces the output
+        \texttt{"Metaprogram reached the beginning"} when called at the
+        beginning of a metaprogram.
     \item[\texttt{test\_mdb\_step\_minus\_1\_after\_step}:]
+        Test that the command \texttt{step -1} produces the output
+        \texttt{"Metaprogram reached the beginning"} when called after a single
+        \texttt{step} command.
     \item[\texttt{test\_mdb\_step\_minus\_1\_after\_step\_in\_full\_mode}:]
+        Test that the command \texttt{step -1} produces the output
+        \texttt{"Metaprogram reached the beginning"} when called after a single
+        \texttt{step} command in full mode.
     \item[\texttt{test\_mdb\_step\_0\_at\_start}:]
         Test that the command \texttt{step 0} has no output if issued at the
         start state.
@@ -67,12 +76,27 @@ Here is a list of these tests, with short descriptions:
         Test that the command \texttt{step 0} has no output if issued at the
         end state.
     \item[\texttt{test\_mdb\_step\_minus\_1\_after\_step\_2}:]
+        Test that the command \texttt{step -1} prints the correct type when
+        called after a \texttt{step 2} command.
     \item[\texttt{test\_mdb\_step\_minus\_1\_after\_step\_2\_in\_full\_mode}:]
+        Test that the command \texttt{step -1} prints the correct type when
+        called after a \texttt{step 2} command in full mode.
     \item[\texttt{test\_mdb\_step\_over\_fib\_from\_root}:]
+        Test that the command \texttt{step over} reaches the end of the
+        metaprogram when called at the beginning of the metaprogram.
     \item[\texttt{test\_mdb\_step\_over\_fib\_from\_after\_step}:]
+        Test that the command \texttt{step over} prints the correct type when
+        called after a single \texttt{step} command.
     \item[\texttt{test\_mdb\_step\_over\_minus\_1\_fib\_from\_after\_step}:]
+        Test that the command \texttt{step over -1} is the inverse of
+        \texttt{step over} in the middle of a metaproram.
     \item[\texttt{test\_mdb\_step\_over\_minus\_1\_multi\_fib\_from\_after\_step}:]
+        Test that the command \texttt{step over -1} is not always the inverse
+        of \texttt{step over} in the middle of a metaproram, using a
+        metaprogram designed to exploit this asymmetry.
     \item[\texttt{test\_mdb\_step\_over\_template\_spec\_no\_deduced\_event}:]
+        Test that the algorithm detailed in \ref{graph-filtering} filters out
+        non \texttt{TemplateInstantiation} and non \texttt{Memoization} events.
     \item[\texttt{test\_mdb\_step\_garbage\_argument}:]
         Tests if the step command prints
         \texttt{"Argument parsing failed"} when it is called with a invalid
@@ -124,9 +148,19 @@ Here is a list of these tests, with short descriptions:
         Tests wheter the \texttt{mdb\_shell::stopped()} returns \texttt{false}
         right after construcion.
     \item[\texttt{test\_mdb\_shell\_empty\_lines}:]
+        Test that the \texttt{mdb\_shell} class doesn't store empty commands
+        in the history, but does store non-empty commands only containing
+        whitespaces do. Also check, that the shell doesn't respond with any
+        output to these command strings.
     \item[\texttt{test\_mdb\_shell\_identical\_lines\_in\_history}:]
+        Test that the \texttt{mdb\_shell} class doesn't store consecutive
+        identical lines in the history.
     \item[\texttt{test\_mdb\_shell\_identical\_all\_space\_lines\_in\_history}:]
+        Test that the \texttt{mdb\_shell} class doesn't store consecutive
+        identical all whitespace lines in the history.
     \item[\texttt{test\_mdb\_shell\_skips\_empty\_lines}:]
+        Test that the \texttt{mdb\_shell} class doesn't story empty lines in
+        the history.
     \item[\texttt{test\_mdb\_shell\_prompt}:]
         Tests wheter \texttt{mdb\_shell::prompt()} returns \texttt{"(mdb) "}.
     \item[\texttt{test\_mdb\_forwardtrace\_without\_evaluation}:]
@@ -138,20 +172,49 @@ Here is a list of these tests, with short descriptions:
         \texttt{"Argument parsing failed"} when it is called with a invalid
         arguments.
     \item[\texttt{test\_mdb\_forwardtrace\_int}:]
+        Test the output of \texttt{forwardtrace} after \texttt{evaluate int}.
     \item[\texttt{test\_mdb\_forwardtrace\_int\_in\_full\_mode}:]
+        Test the output of \texttt{forwardtrace} after
+        \texttt{evaluate -full int}.
     \item[\texttt{test\_mdb\_forwardtrace\_when\_metaprogram\_finished}:]
+        Test that \texttt{forwardtrace} produces the output
+        \texttt{Metaprogram finished.} when issued at the end of a metaprogram.
     \item[\texttt{test\_mdb\_forwardtrace\_when\_metaprogram\_finished\_in\_full\_mode}:]
+        Test that \texttt{forwardtrace} produces the output
+        \texttt{Metaprogram finished.} when issued at the end of a metaprogram
+        in full mode.
     \item[\texttt{test\_mdb\_forwardtrace\_int\_with\_ft}:]
+        Test the output of \texttt{ft} after \texttt{evaluate int}.
     \item[\texttt{test\_mdb\_forwardtrace\_from\_root}:]
+        Test the output of \texttt{forwardtrace} for the fibonacci metaprogram
+        issued from the beginning of the metaprogram.
     \item[\texttt{test\_mdb\_forwardtrace\_from\_root\_in\_full\_mode}:]
+        Test the output of \texttt{forwardtrace} for the fibonacci metaprogram
+        issued from the beginning of the metaprogram in full mode.
     \item[\texttt{test\_mdb\_forwardtrace\_from\_memoization}:]
+        Test the output of \texttt{forwardtrace} for the fibonacci metaprogram
+        from a \texttt{Memoization} event.
     \item[\texttt{test\_mdb\_forwardtrace\_ft\_from\_step\_1}:]
+        Test the output of \texttt{forwardtrace} for the fibonacci metaprogram
+        after one \texttt{step}.
     \item[\texttt{test\_mdb\_forwardtrace\_ft\_from\_step\_1\_in\_full\_mode}:]
+        Test the output of \texttt{forwardtrace} for the fibonacci metaprogram
+        after one \texttt{step} in full mode.
     \item[\texttt{test\_mdb\_forwardtrace\_ft\_from\_step\_1\_with\_limit\_0}:]
+        Test the output of \texttt{forwardtrace 0} for the fibonacci
+        metaprogram after one \texttt{step}.
     \item[\texttt{test\_mdb\_forwardtrace\_ft\_from\_step\_1\_with\_limit\_1}:]
+        Test the output of \texttt{forwardtrace 1} for the fibonacci
+        metaprogram after one \texttt{step}.
     \item[\texttt{test\_mdb\_forwardtrace\_ft\_from\_step\_1\_with\_limit\_1\_in\_full\_mode}:]
+        Test the output of \texttt{forwardtrace 1} for the fibonacci
+        metaprogram after one \texttt{step} in full mode.
     \item[\texttt{test\_mdb\_forwardtrace\_ft\_from\_step\_2\_with\_limit\_2}:]
+        Test the output of \texttt{forwardtrace 2} for the fibonacci
+        metaprogram after \texttt{step 2}.
     \item[\texttt{test\_mdb\_forwardtrace\_ft\_from\_step\_2\_with\_limit\_100}:]
+        Test the output of \texttt{forwardtrace 100} for the fibonacci
+        metaprogram after \texttt{step 2}.
     \item[\texttt{test\_mdb\_forwardtrace\_from\_root\_on\_narrow\_terminal}:]
         Test forwardtrace output on a narrow terminal. Wrapping should occur
         at the terminal boundary.
@@ -197,21 +260,49 @@ Here is a list of these tests, with short descriptions:
         \texttt{"Argument parsing failed"} when it is called with a invalid
         arguments.
     \item[\texttt{test\_mdb\_continue\_fibonacci\_no\_breakpoint}:]
+        Test that after \texttt{continue} the execution reaches the end of the
+        metaprogram if there are no breakpoints.
     \item[\texttt{test\_mdb\_continue\_fibonacci\_reevaulation\_removes\_breakpoints}:]
+        Test that reevaluation removes breakpoints using \texttt{continue}.
     \item[\texttt{test\_mdb\_continue\_fibonacci\_1\_breakpoint}:]
+        Test \texttt{continue} on the fibonacci metaprogram with one
+        breakpoint.
     \item[\texttt{test\_mdb\_continue\_2\_fibonacci\_1\_breakpoint}:]
+        Test \texttt{continue 2} on the fibonacci metaprogram with one
+        breakpoint.
     \item[\texttt{test\_mdb\_continue\_twice\_fibonacci\_1\_breakpoint}:]
+        Test \texttt{continue} twice on the fibonacci metaprogram with one
+        breakpoint.
     \item[\texttt{test\_mdb\_continue\_fibonacci\_2\_breakpoints}:]
+        Test \texttt{continue} on the fibonacci metaprogram with two
+        breakpoints.
     \item[\texttt{test\_mdb\_continue\_2\_fibonacci\_2\_breakpoints}:]
+        Test \texttt{continue 2} on the fibonacci metaprogram with two
+        breakpoints.
     \item[\texttt{test\_mdb\_continue\_10\_fibonacci\_2\_breakpoints}:]
+        Test \texttt{continue 10} on the fibonacci metaprogram with two
+        breakpoints, to check that it doesn't break even if we give a
+        parameter greater than the number of breakpoints.
     \item[\texttt{test\_mdb\_continue\_0\_fibonacci\_1\_breakpoint}:]
+        Test \texttt{continue 0} on the fibonacci metaprogram with one
+        breakpoint.
     \item[\texttt{test\_mdb\_continue\_minus\_1\_at\_start}:]
+        Test \texttt{continue -1} at the beginning of the metaprogram.
     \item[\texttt{test\_mdb\_continue\_minus\_2\_at\_start}:]
+        Test \texttt{continue -2} at the beginning of the metaprogram.
     \item[\texttt{test\_mdb\_continue\_minus\_1\_with\_preceding\_breakpoint}:]
+        Test \texttt{continue -1} with one preceding breakpoint.
     \item[\texttt{test\_mdb\_continue\_minus\_1\_without\_preceding\_breakpoint}:]
+        Test \texttt{continue -1} without preceding breakpoints.
     \item[\texttt{test\_mdb\_continue\_to\_end\_and\_back\_to\_start}:]
+        Test \texttt{continue} by traversing to the end of the metaprogram,
+        then back to the beginning.
     \item[\texttt{test\_mdb\_continue\_to\_end\_and\_back\_to\_start\_in\_full\_mode}:]
+        Test \texttt{continue} by traversing to the end of the metaprogram,
+        then back to the beginning in full mode.
     \item[\texttt{test\_mdb\_continue\_to\_one\_before\_end\_and\_back\_to\_start\_in\_full\_mode}:]
+        Test \texttt{continue} by traversing to the last breakpoint, then back
+        to the beginning in full mode.
     \item[\texttt{test\_empty\_file\_location}:]
         Test the \texttt{file\_location} class' default constructor.
     \item[\texttt{test\_file\_location\_construction}:]
@@ -236,12 +327,32 @@ Here is a list of these tests, with short descriptions:
         \texttt{"<regex> is not a valid regex"}, where <regex> is the entered
         regular expression, when it has some syntatical error.
     \item[\texttt{test\_mdb\_rbreak\_with\_valid\_regex\_no\_match}:]
+        Test that, when a regex is given as a paramter to \texttt{rbreak} which
+        never stops the execution, the string
+        \texttt{"Breakpoint <regex> will never stop the execution"} is
+        printed.
     \item[\texttt{test\_mdb\_rbreak\_with\_valid\_regex\_with\_one\_match}:]
+        Test that, when a regex is given as a paramter to \texttt{rbreak} which
+        never stops the execution once, the string
+        \texttt{"Breakpoint <regex> will stop the execution on 1 location"} is
+        printed.
     \item[\texttt{test\_mdb\_rbreak\_with\_valid\_regex\_with\_two\_matches}:]
+        Test that, when a regex is given as a paramter to \texttt{rbreak} which
+        never stops the execution twice, the string
+        \texttt{"Breakpoint <regex> will stop the execution on 2 locations"} is
+        printed.
     \item[\texttt{test\_mdb\_rbreak\_does\_not\_count\_stops\_in\_unreachable\_subgraphs}:]
+        Test the the execution stop counter in \texttt{rbreak} doesn't count
+        stops in unreachable subgraphs. This could be a problem if precompiled
+        headers were used metadebugger.
     \item[\texttt{test\_mdb\_rbreak\_with\_valid\_regex\_in\_full\_mode}:]
+        Test \texttt{rbreak} and its output in full mode.
     \item[\texttt{test\_mdb\_rbreak\_with\_valid\_regex\_in\_full\_mode\_match\_only\_root}:]
+        Test \texttt{rbreak} and its output in full mode, with a regex which
+        matches only the root node.
     \item[\texttt{test\_mdb\_rbreak\_with\_valid\_regex\_in\_full\_mode\_match\_also\_root}:]
+        Test \texttt{rbreak} and its output in full mode, with a regex which
+        matches the root node, but mathces outher nodes as well.
     \item[\texttt{test\_metaprogram\_constuctor}:]
         Tests to see if \texttt{metaprogram}'s constructor creates an object
         with the expected empty state.
