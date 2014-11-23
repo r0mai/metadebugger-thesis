@@ -114,7 +114,9 @@ To make sure everything will work correctly, running tests is advised:
     \item \texttt{test/metashell\_test}
 \end{itemize}
 
-\section{Basic Usage}
+\section{Basic Usage} %TODO cite this whole thing?
+
+\subsection{Starting metadebugger}
 
 Start metashell by running \texttt{app/metashell}.
 
@@ -125,8 +127,189 @@ After a splash screen is shown, an interactive shell with \texttt{"> "}
 prompt string appears. This is the place, where the C++ code environment
 required by the metaprogram can be entered.
 
+As an example, let's enter the fibonacci metaprogram mentioned earlier:
+
+\lstset{
+    numbers=none
+}
+\includecode{src/fibonacci_as_msh_input.hpp}
+
+By entering backslashes at the end of the lines, you can enter longer lines
+easily.
+
+Now start the metadebugger by entering:
+
+\begin{lstlisting}[escapechar=, style=customcpp]
+> #msh mdb int_<fib<6>::value>
+For help, type "help".
+Metaprogram started
+\end{lstlisting}
+
+You'll see, that the prompt has changed to \texttt{"(mdb) "}. Now you can enter
+metadebugger commands.
+
+\subsection{Stepping}
+
+Metadebugger provides an interface similar to gdb. For example you can step the
+metaprogram forward three steps:
+
+\begin{lstlisting}[escapechar=, style=customcpp]
+(mdb) step 3
+fib<4> (TemplateInstantiation)
+\end{lstlisting}
+
+As you can see, metadebugger tells you that in this step \texttt{fib<4>} is
+getting instantiated in a \texttt{TemplateInstantiation} event.
+
+Stepping backwards is also trivial in a template metaprogram:
+
+\begin{lstlisting}[escapechar=, style=customcpp]
+(mdb) step -1
+fib<5> (TemplateInstantiation)
+\end{lstlisting}
+
+\subsection{Backtrace}
+
+You can check the current backtrace:
+
+\begin{lstlisting}[escapechar=, style=customcpp]
+(mdb) bt
+#0 fib<5> (TemplateInstantiation)
+#1 fib<6> (TemplateInstantiation)
+#2 int_<fib<6>::value>
+\end{lstlisting}
+
+This shows us that:
+
+\begin{itemize}
+    \item
+        We started the template metaprogram execution by evaluating
+        \texttt{int\_<fib<6>::value>}.
+    \item
+        The evaluation of this expression has (at some point) called
+        \texttt{fib<6>}.
+    \item
+        The fib metafunction has (at some point) called \texttt{fib<5>}.
+        This is where we are in the execution of the metaprogram.
+\end{itemize}
+
+\subsection{Forwardtrace}
+
+Metadebugger can also see into the future, and print the forwardtrace from any
+step:
+
+\begin{lstlisting}[escapechar=, style=customcpp]
+(mdb) ft
+fib<5> (TemplateInstantiation)
++ fib<4> (TemplateInstantiation)
+| + fib<3> (TemplateInstantiation)
+| | + fib<2> (TemplateInstantiation)
+| | | + fib<1> (Memoization)
+| | | ` fib<0> (Memoization)
+| | ` fib<1> (Memoization)
+| ` fib<2> (Memoization)
+` fib<3> (Memoization)
+\end{lstlisting}
+
+This shows us what metafunctions the metaprogram \textit{will} call after the
+current location. As you can see the output shows the relations between the
+function calls: which metafunction calls which other metafunctions. The events
+in the output of forwardtrace happen in that order from the top down.
+
+You probably noticed that there are two kinds of events metadebugger shows you:
+
+\begin{description}
+    \item[TemplateInstantiation] event happens when the compiler first
+        encounters and instantiates a new template type. During a
+        \texttt{TemplateInstantiation} event the compiler will instantiate
+        every subtype it needs to get to the result
+    \item[Memoization] event happens when a compiler encounters a type, which
+        it had already instantiated before. It won't go through the
+        instantiation process again, instead it uses technique called
+        memoization to speed up the compilation. This basically means that the
+        compiler remembers every type it had instantiated, and reuses them when
+        it encounters them again.
+
+        Full template specializations (e.g. \texttt{fib<0>} and
+        \texttt{fib<1>}) only appear in Memoization events.
+\end{description}
+
+For example, in the above forwardtrace output, you can see that \texttt{fib<5>}
+reates \texttt{fib<4>} in a \texttt{TemplateInstantiation} event, which in turn
+instantiates \texttt{fib<3>} also in a \texttt{TemplateInstantiation} event and
+so on.  You can also see, that when \texttt{fib<5>} gets to the point to
+instantiate \texttt{fib<3>} it has already been instantiated by
+\texttt{fib<4>}, so only a \texttt{Memoization} event happens.
+
+\subsection{Breakpoints and continue}
+
+You can also create breakpoints:
+
+\begin{lstlisting}[escapechar=, style=customcpp]
+(mdb) rbreak fib<3>
+Breakpoint "fib<3>" will stop the execution on 2 locations
+\end{lstlisting}
+
+Now let's continue the execution until the first breakpoint:
+
+\begin{lstlisting}[escapechar=, style=customcpp]
+(mdb) continue
+Breakpoint "fib<3>" reached
+fib<3> (TemplateInstantiation)
+\end{lstlisting}
+
+Commands can be abbreviated if unambigouos. For example you can use just
+\texttt{c} instead of \texttt{continue}:
+
+\begin{lstlisting}[escapechar=, style=customcpp]
+(mdb) c
+Breakpoint "fib<3>" reached
+fib<3> (Memoization)
+\end{lstlisting}
+
+You can repeat the last command by simply hitting enter again:
+
+\begin{lstlisting}[escapechar=, style=customcpp]
+(mdb)
+Metaprogram finished
+mpl_::int_<13>
+\end{lstlisting}
 
 %TODO moar usage
+
+\subsection{Full mode}
+
+There are two modes which Metadebugger can operate in. The normal mode, which
+was shown in the previous chapters, and the full mode. To demonstrate the
+difference let's evaluate a metaprogram in full mode and print the
+forwardtrace:
+
+\begin{lstlisting}[escapechar=, style=customcpp]
+(mdb) evaluate -full int_<fib<4>::value>
+Metaprogram started
+(mdb) ft
+int_<fib<4>::value>
++ fib<4>
+| + fib<3>
+| | + fib<2>
+| | | + fib<1>
+| | | ` fib<0>
+| | ` fib<1>
+| ` fib<2>
+|   + fib<1>
+|   ` fib<0>
+` mpl_::int_<5>
+\end{lstlisting}
+
+\lstset{
+    numbers=left
+}
+
+Full mode doesn't try to follow what the real complier does, but instead it
+tries to simulate a dumb compiler, which doesn't use memoizations to speed up
+compilation. For example, \texttt{fib<2>} and it's full sub call tree is
+visible two times. This mode can be useful, when the part of the trace you're
+intrested in is hidden under multiple layers of Memoizations in normal mode.
 
 \section{Command reference}
 
