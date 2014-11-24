@@ -132,14 +132,23 @@ As an example, let's enter the fibonacci metaprogram mentioned earlier:
 \lstset{
     numbers=none
 }
-\includecode{src/fibonacci_as_msh_input.hpp}
+\begin{lstlisting}[escapechar=, style=mdboutput]
+> template<int N> struct fib { \
+...>static const int value = \
+...>   fib<N - 2>::value + \
+...>   fib<N - 1>::value; \
+...>};
+> template<> struct fib<1> { static const int value = 1; };
+> template<> struct fib<0> { static const int value = 0; };
+> template<int N> struct int_ {};
+\end{lstlisting}
 
 By entering backslashes at the end of the lines, you can enter longer lines
 easily.
 
 Now start the metadebugger by entering:
 
-\begin{lstlisting}[escapechar=, style=customcpp]
+\begin{lstlisting}[escapechar=, style=mdboutput]
 > #msh mdb int_<fib<6>::value>
 For help, type "help".
 Metaprogram started
@@ -153,7 +162,7 @@ metadebugger commands.
 Metadebugger provides an interface similar to gdb. For example you can step the
 metaprogram forward three steps:
 
-\begin{lstlisting}[escapechar=, style=customcpp]
+\begin{lstlisting}[escapechar=, style=mdboutput]
 (mdb) step 3
 fib<4> (TemplateInstantiation)
 \end{lstlisting}
@@ -163,7 +172,7 @@ getting instantiated in a \texttt{TemplateInstantiation} event.
 
 Stepping backwards is also trivial in a template metaprogram:
 
-\begin{lstlisting}[escapechar=, style=customcpp]
+\begin{lstlisting}[escapechar=, style=mdboutput]
 (mdb) step -1
 fib<5> (TemplateInstantiation)
 \end{lstlisting}
@@ -172,7 +181,7 @@ fib<5> (TemplateInstantiation)
 
 You can check the current backtrace:
 
-\begin{lstlisting}[escapechar=, style=customcpp]
+\begin{lstlisting}[escapechar=, style=mdboutput]
 (mdb) bt
 #0 fib<5> (TemplateInstantiation)
 #1 fib<6> (TemplateInstantiation)
@@ -198,7 +207,7 @@ This shows us that:
 Metadebugger can also see into the future, and print the forwardtrace from any
 step:
 
-\begin{lstlisting}[escapechar=, style=customcpp]
+\begin{lstlisting}[escapechar=, style=mdboutput]
 (mdb) ft
 fib<5> (TemplateInstantiation)
 + fib<4> (TemplateInstantiation)
@@ -245,14 +254,14 @@ instantiate \texttt{fib<3>} it has already been instantiated by
 
 You can also create breakpoints:
 
-\begin{lstlisting}[escapechar=, style=customcpp]
+\begin{lstlisting}[escapechar=, style=mdboutput]
 (mdb) rbreak fib<3>
 Breakpoint "fib<3>" will stop the execution on 2 locations
 \end{lstlisting}
 
 Now let's continue the execution until the first breakpoint:
 
-\begin{lstlisting}[escapechar=, style=customcpp]
+\begin{lstlisting}[escapechar=, style=mdboutput]
 (mdb) continue
 Breakpoint "fib<3>" reached
 fib<3> (TemplateInstantiation)
@@ -261,7 +270,7 @@ fib<3> (TemplateInstantiation)
 Commands can be abbreviated if unambigouos. For example you can use just
 \texttt{c} instead of \texttt{continue}:
 
-\begin{lstlisting}[escapechar=, style=customcpp]
+\begin{lstlisting}[escapechar=, style=mdboutput]
 (mdb) c
 Breakpoint "fib<3>" reached
 fib<3> (Memoization)
@@ -269,7 +278,7 @@ fib<3> (Memoization)
 
 You can repeat the last command by simply hitting enter again:
 
-\begin{lstlisting}[escapechar=, style=customcpp]
+\begin{lstlisting}[escapechar=, style=mdboutput]
 (mdb)
 Metaprogram finished
 mpl_::int_<13>
@@ -284,7 +293,7 @@ was shown in the previous chapters, and the full mode. To demonstrate the
 difference let's evaluate a metaprogram in full mode and print the
 forwardtrace:
 
-\begin{lstlisting}[escapechar=, style=customcpp]
+\begin{lstlisting}[escapechar=, style=mdboutput]
 (mdb) evaluate -full int_<fib<4>::value>
 Metaprogram started
 (mdb) ft
