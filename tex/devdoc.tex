@@ -185,6 +185,18 @@ Pseudocode for the algorithm:
 %TODO add some text and explanation
 \includegraphics[width=\textwidth]{img/mdb_class_diagramm.eps}
 
+Notes:
+\begin{itemize}
+    \item
+        Only public member functions and private member variables are shown
+        on the diagramm.
+    \item
+        There is another class inheriting \texttt{mdb\_shell} called
+        \texttt{mdb\_test\_shell}. This class is only used for testing
+        purposes to mock out the actual shell and Readline related
+        functionalities, which make unit testing impossible.
+\end{itemize}
+
 \section{Libraries used}
 
 Several libraries are used by Metadebugger. In the section the main libraries
