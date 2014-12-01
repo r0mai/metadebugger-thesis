@@ -133,6 +133,7 @@ As an example, let's enter the fibonacci metaprogram mentioned earlier:
 \lstset{
     numbers=none
 }
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[escapechar=, style=mdboutput]
 > template<int N> struct fib { \
 ...>static const int value = \
@@ -143,17 +144,20 @@ As an example, let's enter the fibonacci metaprogram mentioned earlier:
 > template<> struct fib<0> { static const int value = 0; };
 > template<int N> struct int_ {};
 \end{lstlisting}
+\end{minipage}
 
 By entering backslashes at the end of the lines, you can enter longer lines
 easily.
 
 Now start the metadebugger by entering:
 
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[escapechar=, style=mdboutput]
 > #msh mdb int_<fib<6>::value>
 For help, type "help".
 Metaprogram started
 \end{lstlisting}
+\end{minipage}
 
 You'll see, that the prompt has changed to \texttt{"(mdb) "}. Now you can enter
 metadebugger commands.
@@ -163,31 +167,37 @@ metadebugger commands.
 Metadebugger provides an interface similar to gdb. For example you can step the
 metaprogram forward three steps:
 
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[escapechar=, style=mdboutput]
 (mdb) step 3
 fib<4> (TemplateInstantiation)
 \end{lstlisting}
+\end{minipage}
 
 As you can see, metadebugger tells you that in this step \texttt{fib<4>} is
 getting instantiated in a \texttt{TemplateInstantiation} event.
 
 Stepping backwards is also trivial in a template metaprogram:
 
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[escapechar=, style=mdboutput]
 (mdb) step -1
 fib<5> (TemplateInstantiation)
 \end{lstlisting}
+\end{minipage}
 
 \subsection{Backtrace}
 
 You can check the current backtrace:
 
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[escapechar=, style=mdboutput]
 (mdb) bt
 #0 fib<5> (TemplateInstantiation)
 #1 fib<6> (TemplateInstantiation)
 #2 int_<fib<6>::value>
 \end{lstlisting}
+\end{minipage}
 
 This shows us that:
 
@@ -208,6 +218,7 @@ This shows us that:
 Metadebugger can also see into the future, and print the forwardtrace from any
 step:
 
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[escapechar=, style=mdboutput]
 (mdb) ft
 fib<5> (TemplateInstantiation)
@@ -220,6 +231,7 @@ fib<5> (TemplateInstantiation)
 | ` fib<2> (Memoization)
 ` fib<3> (Memoization)
 \end{lstlisting}
+\end{minipage}
 
 This shows us what metafunctions the metaprogram \textit{will} call after the
 current location. As you can see the output shows the relations between the
@@ -255,35 +267,43 @@ instantiate \texttt{fib<3>} it has already been instantiated by
 
 You can also create breakpoints:
 
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[escapechar=, style=mdboutput]
 (mdb) rbreak fib<3>
 Breakpoint "fib<3>" will stop the execution on 2 locations
 \end{lstlisting}
+\end{minipage}
 
 Now let's continue the execution until the first breakpoint:
 
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[escapechar=, style=mdboutput]
 (mdb) continue
 Breakpoint "fib<3>" reached
 fib<3> (TemplateInstantiation)
 \end{lstlisting}
+\end{minipage}
 
 Commands can be abbreviated if unambigouos. For example you can use just
 \texttt{c} instead of \texttt{continue}:
 
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[escapechar=, style=mdboutput]
 (mdb) c
 Breakpoint "fib<3>" reached
 fib<3> (Memoization)
 \end{lstlisting}
+\end{minipage}
 
 You can repeat the last command by simply hitting enter again:
 
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[escapechar=, style=mdboutput]
 (mdb)
 Metaprogram finished
 mpl_::int_<13>
 \end{lstlisting}
+\end{minipage}
 
 \subsection{Full mode}
 
@@ -292,6 +312,7 @@ was shown in the previous chapters, and the full mode. To demonstrate the
 difference let's evaluate a metaprogram in full mode and print the
 forwardtrace:
 
+\begin{minipage}{\linewidth}
 \begin{lstlisting}[escapechar=, style=mdboutput]
 (mdb) evaluate -full int_<fib<4>::value>
 Metaprogram started
@@ -308,6 +329,7 @@ int_<fib<4>::value>
 |   ` fib<0>
 ` mpl_::int_<5>
 \end{lstlisting}
+\end{minipage}
 
 \lstset{
     numbers=left
