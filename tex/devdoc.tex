@@ -214,7 +214,7 @@ are listed.
 Boost is a set of open source C++ libraries that provide ready to use solutions
 to common tasks. In Metadebugger several Boost libraries are being used:
 \begin{description}
-    \item[Boost.Graph] \hfill \\
+    \item[Boost.Graph]\cite{boost-graph} \hfill \\
         This library provides a generic interface and implementations of graph
         data-structures and algorithms.
 
@@ -222,7 +222,7 @@ to common tasks. In Metadebugger several Boost libraries are being used:
         stored in a Boost.Graph data-structure. Since the whole program is
         revolving around the metaprogram which being debugged, it was very
         important to choose a robust and flexible graph library.
-    \item[Boost.Optional] \hfill \\
+    \item[Boost.Optional]\cite{boost-optional} \hfill \\
         Unlike in some programming languages, in C++ stack allocated objects
         cannot have a null value. This have some advantages, for example the
         programmer doesn't have to check for a null value before doing
@@ -232,31 +232,31 @@ to common tasks. In Metadebugger several Boost libraries are being used:
         in which the object is invalid in purpose. Boost.Optional provides an
         easy way to turn any type into a type which can have an invalid state
         called \verb|boost::none|.
-    \item[Boost.PropertyTree] \hfill \\
+    \item[Boost.PropertyTree]\cite{boost-pt} \hfill \\
         The Boost.PropertyTree library provides a data structure that stores an
         arbitrarily deeply nested tree of values, indexed at each level by some
         key.
 
         Metadebugger makes use of the xml parsing capabilites of
         Boost.PropertyTree to parse the xml created by Templight.
-    \item[Boost.Regex] \hfill \\
+    \item[Boost.Regex]\cite{boost-regex} \hfill \\
         Boost.Regex provides support for regular expressions in C++.
 
         Metadebugger uses regular expressions to match type names when
         breakpoints are used.
-    \item[Boost.Filesystem] \hfill \\
+    \item[Boost.Filesystem]\cite{boost-fs} \hfill \\
         Boost.Filesystem provides cross platform solutions to manipulate the
         file system.
 
         Metadebugger uses Boost.Filesystem to create and delete the temporary
         file where the output of Templight is stored until it's processed.
-    \item[Boost.StringAlgorithm] \hfill \\
+    \item[Boost.StringAlgorithm]\cite{boost-string} \hfill \\
         Boost.StringAlgorithm provides a handful of useful string-related
         algorithms.
 
         Metadebugger has to manipulate strings in various contexts and makes
         use of a few algorithms contained in this library.
-    \item[Boost.LexicalCast] \hfill \\
+    \item[Boost.LexicalCast]\cite{boost-lexicalcast} \hfill \\
         Boost.LexicalCast provides an easy way to convert numbers to string
         form and the other way around.
 
