@@ -1,14 +1,12 @@
 \documentclass[a4paper,12pt]{report}
 
-\usepackage[utf8]{inputenc} % vagy latin2 helyett utf8
-\usepackage[T1]{fontenc}      % karakterkódolás
-%\usepackage[magyar]{babel}    % magyar beállítások
-\frenchspacing                % helyközök
-%\usepackage{times}           % betûtípus
-\usepackage{lmodern}          %   vagy inkább ez
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\frenchspacing
+\usepackage{lmodern}
 
 \usepackage[margin=2.5cm,left=3.5cm,includeheadfoot]{geometry}
-                              % margók
+
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage{color}
@@ -46,19 +44,15 @@
     \lstinputlisting[escapechar=, style=customcpp]{#1}
 }
 
-\usepackage{graphicx}         % képekhez
-\usepackage{setspace}         % sorköz
-\onehalfspacing               % másfeles
+\usepackage{graphicx}
+\usepackage{setspace}
+\onehalfspacing
 
 \begin{document}
 
-% ------------------------------------------------------------------------------
-% Címlap
 
 \input{tex/cover}
 
-% ------------------------------------------------------------------------------
-% Témabejelentõ
 
 \vspace*{\fill}
 \begin{center}
