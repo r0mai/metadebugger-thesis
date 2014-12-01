@@ -1,4 +1,4 @@
-get_command_for_line(string line) {
+get_command_for_line(line) {
   command = get_first_word(line);
 
   // key_command_map is an ordered map of
