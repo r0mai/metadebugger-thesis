@@ -137,8 +137,9 @@ function:
 
 \includecode{src/metaprogram_state_t.hpp}
 
-The other extra feature of stepping is going backwards. A
-\verb$void metaprogram::step_back()$ functions was created which also
+The other very useful feature of stepping is going backwards. The user can
+achieve this by passing a negative argument to the \verb$step$ command. For
+this \verb$void metaprogram::step_back()$ function was implemented which also
 updates the state struct, but does the opposite of \verb$step()$. This
 means, that if \verb$step()$ was called from state A and resulted in state
 B, then calling \verb$step_back()$ from state B will result in state A.
