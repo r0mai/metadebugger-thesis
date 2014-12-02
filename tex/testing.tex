@@ -8,6 +8,20 @@ integration tests.
 
 \section{Test plan}
 
+%TODO is this really a Test *plan*?
+
+The aim was to get as close to 100 percent code coverage with automated tests
+as possible. The written tests can be divided into two categories:
+
+\begin{description}
+    \item[Unit tests:] \hfill \\
+        Unit tests call low level functions directly and inspect the returned
+        value for correctness.
+    \item[Integration tests:] \hfill \\
+        Integration tests use an instance of the \texttt{test\_mdb\_shell}
+        class, which inherits from \texttt{mdb\_shell} and can be used to
+        simulate user input and the displayed output.
+\end{description}
 %TODO
 
 \section{Unit and integration tests} \label{tests}
