@@ -175,12 +175,9 @@ metadebugger commands.
 Metadebugger provides an interface similar to gdb\cite{gdb}. For example you
 can step the metaprogram forward three steps:
 
-\begin{minipage}{\linewidth}
-\begin{lstlisting}[escapechar=, style=mdboutput]
-(mdb) step 3
-fib<4> (TemplateInstantiation)
-\end{lstlisting}
-\end{minipage}
+\begin{figure}[H]
+\input{tex/step_3}
+\end{figure}
 
 As you can see, metadebugger tells you that in this step \texttt{fib<4>} is
 getting instantiated in a \texttt{TemplateInstantiation} event.
