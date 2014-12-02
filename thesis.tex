@@ -5,12 +5,14 @@
 \frenchspacing
 \usepackage{lmodern}
 
+
 \usepackage[margin=2.5cm,left=3.5cm,includeheadfoot]{geometry}
 
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage{color}
 \usepackage{float}
+\usepackage{ifxetex}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \lstloadlanguages{C++}
 \lstset{
@@ -44,11 +46,18 @@
     \lstinputlisting[escapechar=, style=customcpp]{#1}
 }
 
+\newenvironment{tttenv}{\ttfamily}{\par}
+
 \usepackage{mathtools}
 \usepackage{amsfonts}
 \usepackage{graphicx}
 \usepackage{setspace}
 \onehalfspacing
+
+\definecolor{color02}{rgb}{1.00,0.33,0.33}
+\definecolor{color03}{rgb}{0.00,0.73,0.00}
+
+\newcommand{\tab}{\hspace{5mm}}
 
 \begin{document}
 
