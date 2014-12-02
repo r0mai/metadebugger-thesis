@@ -1,0 +1,24 @@
+
+\begin{tttenv}
+(mdb) ft \\
+int\_<fib<{\color{color04} 5}>::value> \\
+{\color{color03} + }fib<{\color{color04} 5}> (TemplateInstantiation) \\
+{\color{color03} \textbar{} }{\color{color06} + }fib<{\color{color04} 3}>
+(TemplateInstantiation) \\
+{\color{color03} \textbar{} }{\color{color06} \textbar{} }{\color{color07} + }fib<{\color{color04} 1}>
+(Memoization) \\
+{\color{color03} \textbar{} }{\color{color06} \textbar{} }{\color{color07} ` }fib<{\color{color04} 2}>
+(TemplateInstantiation) \\
+{\color{color03} \textbar{} }{\color{color06} \textbar{} }{\color{color07} \hspace{0.5em} }{\color{color08} +
+}fib<{\color{color04} 0}> (Memoization) \\
+{\color{color03} \textbar{} }{\color{color06} \textbar{} }{\color{color07} \hspace{0.5em} }{\color{color08} `
+}fib<{\color{color04} 1}> (Memoization) \\
+{\color{color03} \textbar{} }{\color{color06} ` }fib<{\color{color04} 4}>
+(TemplateInstantiation) \\
+{\color{color03} \textbar{} }{\color{color06} \hspace{0.5em} }{\color{color07} + }fib<{\color{color04} 2}>
+(Memoization) \\
+{\color{color03} \textbar{} }{\color{color06} \hspace{0.5em} }{\color{color07} ` }fib<{\color{color04} 3}>
+(Memoization) \\
+{\color{color03} + }fib<{\color{color04} 5}> (Memoization) \\
+{\color{color03} ` }int\_<{\color{color04} 5}> (TemplateInstantiation) \\
+\end{tttenv}
