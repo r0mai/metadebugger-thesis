@@ -259,34 +259,22 @@ You can also create breakpoints:
 
 Now let's continue the execution until the first breakpoint:
 
-\begin{minipage}{\linewidth}
-\begin{lstlisting}[escapechar=, style=mdboutput]
-(mdb) continue
-Breakpoint "fib<3>" reached
-fib<3> (TemplateInstantiation)
-\end{lstlisting}
-\end{minipage}
+\begin{figure}[H]
+\input{tex/continue}
+\end{figure}
 
 Commands can be abbreviated if unambigouos. For example you can use just
 \texttt{c} instead of \texttt{continue}:
 
-\begin{minipage}{\linewidth}
-\begin{lstlisting}[escapechar=, style=mdboutput]
-(mdb) c
-Breakpoint "fib<3>" reached
-fib<3> (Memoization)
-\end{lstlisting}
-\end{minipage}
+\begin{figure}[H]
+\input{tex/continue_c}
+\end{figure}
 
 You can repeat the last command by simply hitting enter again:
 
-\begin{minipage}{\linewidth}
-\begin{lstlisting}[escapechar=, style=mdboutput]
-(mdb)
-Metaprogram finished
-mpl_::int_<13>
-\end{lstlisting}
-\end{minipage}
+\begin{figure}[H]
+\input{tex/continue_blank}
+\end{figure}
 
 \subsection{Full mode}
 
