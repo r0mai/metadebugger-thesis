@@ -192,14 +192,9 @@ Stepping backwards is also trivial in a template metaprogram:
 
 You can check the current backtrace:
 
-\begin{minipage}{\linewidth}
-\begin{lstlisting}[escapechar=, style=mdboutput]
-(mdb) bt
-#0 fib<5> (TemplateInstantiation)
-#1 fib<6> (TemplateInstantiation)
-#2 int_<fib<6>::value>
-\end{lstlisting}
-\end{minipage}
+\begin{figure}[H]
+\input{tex/backtrace}
+\end{figure}
 
 This shows us that:
 
