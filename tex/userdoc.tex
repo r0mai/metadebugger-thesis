@@ -140,7 +140,7 @@ a sort of inverse of a backtrace.
 Start metashell by running \texttt{app/metashell}.
 
 %\includegraphics[width=0.9\textwidth]{img/splash.eps}
-\begin{figure}[h]
+\begin{figure}[H]
 \input{tex/splash}
 \end{figure}
 
@@ -154,18 +154,9 @@ As an example, let's enter the fibonacci metaprogram mentioned earlier:
 \lstset{
     numbers=none
 }
-\begin{minipage}{\linewidth}
-\begin{lstlisting}[escapechar=, style=mdboutput]
-> template<int N> struct fib { \
-...>static const int value = \
-...>   fib<N - 1>::value + \
-...>   fib<N - 2>::value; \
-...>};
-> template<> struct fib<1> { static const int value = 1; };
-> template<> struct fib<0> { static const int value = 0; };
-> template<int N> struct int_ {};
-\end{lstlisting}
-\end{minipage}
+\begin{figure}[H]
+\input{tex/mp_input}
+\end{figure}
 
 By entering backslashes at the end of the lines, you can enter longer lines
 easily.
