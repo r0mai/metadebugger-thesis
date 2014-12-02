@@ -215,20 +215,9 @@ This shows us that:
 Metadebugger can also see into the future, and print the forwardtrace from any
 step:
 
-\begin{minipage}{\linewidth}
-\begin{lstlisting}[escapechar=, style=mdboutput]
-(mdb) ft
-fib<5> (TemplateInstantiation)
-+ fib<4> (TemplateInstantiation)
-| + fib<3> (TemplateInstantiation)
-| | + fib<2> (TemplateInstantiation)
-| | | + fib<1> (Memoization)
-| | | ` fib<0> (Memoization)
-| | ` fib<1> (Memoization)
-| ` fib<2> (Memoization)
-` fib<3> (Memoization)
-\end{lstlisting}
-\end{minipage}
+\begin{figure}[H]
+\input{tex/forwardtrace}
+\end{figure}
 
 This shows us what metafunctions the metaprogram \textit{will} call after the
 current location. As you can see the output shows the relations between the
