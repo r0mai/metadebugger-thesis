@@ -18,9 +18,12 @@ For a specific metaprogram, Metadebugger represents only the metaprogram's call
 graph. For example instantiating \verb|int_<fib<5>::value>| would be
 represented by the following graph in Metadebugger:
 
-\includegraphics[width=\textwidth]{img/fib5_call_graph.eps}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{img/fib5_call_graph.eps}
+    \caption{Internal representation of the fibonacci metaprogram}
+\end{figure}
 
-It can be seen from the above graphic, that the graph vertices represent types,
+It can be seen from the above figure, that the graph vertices represent types,
 and edges represent instantiation events. A type can instantiate multiple
 types, and a type can be referenced from multiple places. The first reference
 to a type will be a TempateInstantiation event (as it is instantiated for the
