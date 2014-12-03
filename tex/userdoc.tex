@@ -139,9 +139,9 @@ a sort of inverse of a backtrace.
 
 Start metashell by running \texttt{app/metashell}.
 
-%\includegraphics[width=0.9\textwidth]{img/splash.eps}
 \begin{figure}[H]
-\input{tex/splash}
+    \input{tex/splash}
+    \caption{Metashell's splash text}
 \end{figure}
 
 %TODO maybe mention, that "> " is metashell?
@@ -155,7 +155,8 @@ As an example, let's enter the fibonacci metaprogram mentioned earlier:
     numbers=none
 }
 \begin{figure}[H]
-\input{tex/mp_input}
+    \input{tex/mp_input}
+    \caption{Entering of the environment}
 \end{figure}
 
 By entering backslashes at the end of the lines, you can enter longer lines
@@ -164,7 +165,8 @@ easily.
 Now start the metadebugger by entering:
 
 \begin{figure}[H]
-\input{tex/mdb_start}
+    \input{tex/mdb_start}
+    \caption{Starting Metadebugger}
 \end{figure}
 
 You'll see, that the prompt has changed to \texttt{"(mdb) "}. Now you can enter
@@ -176,7 +178,8 @@ Metadebugger provides an interface similar to gdb\cite{gdb}. For example you
 can step the metaprogram forward three steps:
 
 \begin{figure}[H]
-\input{tex/step_3}
+    \input{tex/step_3}
+    \caption{Stepping forward 3 times}
 \end{figure}
 
 As you can see, metadebugger tells you that in this step \texttt{fib<4>} is
@@ -185,7 +188,8 @@ getting instantiated in a \texttt{TemplateInstantiation} event.
 Stepping backwards is also trivial in a template metaprogram:
 
 \begin{figure}[H]
-\input{tex/step_minus_1}
+    \input{tex/step_minus_1}
+    \caption{Stepping backwards once}
 \end{figure}
 
 \subsection{Backtrace}
@@ -193,7 +197,8 @@ Stepping backwards is also trivial in a template metaprogram:
 You can check the current backtrace:
 
 \begin{figure}[H]
-\input{tex/backtrace}
+    \input{tex/backtrace}
+    \caption{The output of the \texttt{bt} command}
 \end{figure}
 
 This shows us that:
@@ -216,7 +221,8 @@ Metadebugger can also see into the future, and print the forwardtrace from any
 step:
 
 \begin{figure}[H]
-\input{tex/forwardtrace}
+    \input{tex/forwardtrace}
+    \caption{The output of the \texttt{ft} command}
 \end{figure}
 
 This shows us what metafunctions the metaprogram \textit{will} call after the
@@ -254,26 +260,30 @@ instantiate \texttt{fib<3>} it has already been instantiated by
 You can also create breakpoints:
 
 \begin{figure}[H]
-\input{tex/rbreak}
+    \input{tex/rbreak}
+    \caption{Using the \texttt{rbreak} command}
 \end{figure}
 
 Now let's continue the execution until the first breakpoint:
 
 \begin{figure}[H]
-\input{tex/continue}
+    \input{tex/continue}
+    \caption{Using the \texttt{rbreak} command}
 \end{figure}
 
 Commands can be abbreviated if unambigouos. For example you can use just
 \texttt{c} instead of \texttt{continue}:
 
 \begin{figure}[H]
-\input{tex/continue_c}
+    \input{tex/continue_c}
+    \caption{Abbreviating \texttt{continue} as \texttt{c}}
 \end{figure}
 
 You can repeat the last command by simply hitting enter again:
 
 \begin{figure}[H]
-\input{tex/continue_blank}
+    \input{tex/continue_blank}
+    \caption{Repeating the last command}
 \end{figure}
 
 \subsection{Full mode}
@@ -284,7 +294,8 @@ difference let's evaluate a metaprogram in full mode and print the
 forwardtrace:
 
 \begin{figure}[H]
-\input{tex/forwardtrace_full}
+    \input{tex/forwardtrace_full}
+    \caption{Forwardtrace in full mode}
 \end{figure}
 
 \lstset{
