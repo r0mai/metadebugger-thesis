@@ -140,7 +140,10 @@ was created which does a single iteration of the depth first traversal by
 updating the state structure. The \verb$state_t$ struct and the step
 function:
 
-\includecode{src/metaprogram_state_t.hpp}
+\begin{figure}[H]
+    \includecode{src/metaprogram_state_t.hpp}
+    \caption{Code section describing \texttt{step()} and \texttt{state\_t}}
+\end{figure}
 
 The other very useful feature of stepping is going backwards. The user can
 achieve this by passing a negative argument to the \verb$step$ command. For
@@ -154,7 +157,12 @@ reachable vertex were discovered) are exceptions from this rule.
 When step is executing, it marks the changes it made into the state into a
 \verb$rollback_t$ structure and pushes them onto a stack:
 
-\includecode{src/metaprogram_rollback_t.hpp}
+\begin{figure}[H]
+    \includecode{src/metaprogram_rollback_t.hpp}
+    \caption{Code section describing \texttt{step\_back()} and
+        \texttt{rollback\_t}
+    }
+\end{figure}
 
 \verb$step_back()$ simply picks pops the top element from the stack, and
 restores the state change the last \verb$step()$ did, based on the
@@ -182,7 +190,10 @@ for backtrace, even though it is not a unique prefix.
 
 Pseudocode for the algorithm:
 
-\includecode{src/command_matching.cpp}
+\begin{figure}[H]
+    \includecode{src/command_matching.cpp}
+    \caption{The algorithm for command matching}
+\end{figure}
 
 \pagebreak
 
@@ -193,8 +204,9 @@ Here is the class diagram for the main classes that are the major components of
 Metadebugger.
 
 \begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{img/mdb_class_diagram.eps}
+    \centering
+    \includegraphics[width=\textwidth]{img/mdb_class_diagram.eps}
+    \caption{Metadebugger class diagram}
 \end{figure}
 
 Notes:

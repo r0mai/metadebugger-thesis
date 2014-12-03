@@ -1,7 +1,8 @@
 class metaprogram {
   // ...
 public:
-  typedef boost::optional<edge_descriptor> optional_edge_descriptor;
+  typedef boost::optional<edge_descriptor>
+      optional_edge_descriptor;
 
   typedef std::vector<bool> discovered_t;
   typedef std::vector<optional_edge_descriptor> parent_edge_t;
