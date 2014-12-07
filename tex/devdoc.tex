@@ -157,8 +157,8 @@ function:
 \noindent
 The other very useful feature of stepping is going backwards. The user can
 achieve this by passing a negative argument to the \texttt{step} command. For
-this \texttt{void metaprogram::step\_back()} function was implemented which also
-updates the state struct, but does the opposite of \texttt{step()}. This
+this the \texttt{void metaprogram::step\_back()} function was implemented which
+also updates the state struct, but does the opposite of \texttt{step()}. This
 means, that if \texttt{step()} was called from state A and resulted in state
 B, then calling \texttt{step\_back()} from state B will result in state A.
 The two endpoint states (when nothing has been discovered and when every
