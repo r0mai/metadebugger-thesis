@@ -194,10 +194,10 @@ If the user enters a prefix of a command which uniquely identifies the command
 (so there is no other command with that same prefix), than that command should
 be executed. In Metadebugger some commands also have aliases (for example, a
 shortened alias for the command \texttt{"backtrace"} is \texttt{"bt"}). The
-the entered command should also be accepted when it is not a prefix for a
-unique command, but all possible candidate commands are aliases for the same
-command. For example the input \texttt{"b"} should be accepted as a command
-for backtrace, even though it is not a unique prefix.
+entered command should also be accepted when it is not a prefix for a unique
+command, but all possible candidate commands are aliases for the same command.
+For example the input \texttt{"b"} should be accepted as a command for
+backtrace, even though it is not a unique prefix.
 
 Pseudocode for the algorithm:
 
