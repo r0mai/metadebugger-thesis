@@ -162,7 +162,7 @@ also updates the state struct, but does the opposite of \texttt{step()}. This
 means, that if \texttt{step()} was called from state A and resulted in state
 B, then calling \texttt{step\_back()} from state B will result in state A.
 The two endpoint states (when nothing has been discovered and when every
-reachable vertex were discovered) are exceptions from this rule.
+reachable vertex was discovered) are exceptions from this rule.
 
 When step is executing, it marks the changes it made into the state into a
 \texttt{rollback\_t} structure and pushes them onto a stack:
