@@ -143,6 +143,7 @@ Start metashell by running \texttt{app/metashell}.
 \end{figure}
 
 %TODO maybe mention, that "> " is metashell?
+\noindent
 After a splash screen is shown, an interactive shell with \texttt{"> "}
 prompt string appears. This is the place, where the C++ code environment
 required by the metaprogram can be entered.
@@ -157,6 +158,7 @@ As an example, let's enter the fibonacci metaprogram mentioned earlier:
     \caption{Entering of the environment}
 \end{figure}
 
+\noindent
 By entering backslashes at the end of the lines, you can enter longer lines
 easily.
 
@@ -167,6 +169,7 @@ Now start the metadebugger by entering:
     \caption{Starting Metadebugger}
 \end{figure}
 
+\noindent
 You'll see, that the prompt has changed to \texttt{"(mdb) "}. Now you can enter
 metadebugger commands.
 
@@ -180,6 +183,7 @@ can step the metaprogram forward three steps:
     \caption{Stepping forward 3 times}
 \end{figure}
 
+\noindent
 As you can see, metadebugger tells you that in this step \texttt{fib<4>} is
 getting instantiated in a \texttt{TemplateInstantiation} event.
 
@@ -199,6 +203,7 @@ You can check the current backtrace:
     \caption{Output of the \texttt{bt} command}
 \end{figure}
 
+\noindent
 This shows us that:
 
 \begin{itemize}
@@ -223,6 +228,7 @@ step:
     \caption{Output of the \texttt{ft} command}
 \end{figure}
 
+\noindent
 This shows us what metafunctions the metaprogram \textit{will} call after the
 current location. As you can see the output shows the relations between the
 function calls: which metafunction calls which other metafunctions. The events
@@ -262,13 +268,16 @@ You can also create breakpoints:
     \caption{Using the \texttt{rbreak} command}
 \end{figure}
 
+\noindent
 Now let's continue the execution until the first breakpoint:
 
+\noindent
 \begin{figure}[H]
     \input{tex/continue}
     \caption{Using the \texttt{continue} command}
 \end{figure}
 
+\noindent
 Commands can be abbreviated if unambigouos. For example you can use just
 \texttt{c} instead of \texttt{continue}:
 
@@ -277,6 +286,7 @@ Commands can be abbreviated if unambigouos. For example you can use just
     \caption{Abbreviating \texttt{continue} as \texttt{c}}
 \end{figure}
 
+\noindent
 You can repeat the last command by simply hitting enter again:
 
 \begin{figure}[H]
