@@ -66,7 +66,7 @@ following properties:
         The documentation promises, that these \texttt{vertex\_descriptor}
         start from 0 and go up from there for every vertex added to the graph.
         The algorithms in Metadebugger relies heavily on this handy property.
-        Removing vertices from the graph would break this continous indexing.
+        Removing vertices from the graph would break this continuous indexing.
 \end{itemize}
 
 The filtering process takes multiple stages. The filter algorithm starts out
@@ -79,7 +79,7 @@ with a graph, where all edges are enabled.
     \item
         Enable edges going from the root vertex for which the
         \texttt{point\_of\_instantiation} edge property matches the currently
-        entered line. This is to filter out instantiation subtrees, which were
+        entered line. This is to filter out instantiation sub trees, which were
         not initiated by the type entered by the user.
     \item
         Now a depth first traversal is done from the root vertex going only on
@@ -102,7 +102,7 @@ with a graph, where all edges are enabled.
 \subsection{Forwardtrace}
 
 When at some point the user wants to see what will happen in the future with
-the current type it is the eaisest to issue a forwardtrace command. Here is
+the current type it is the easiest to issue a forwardtrace command. Here is
 what the forwardtrace looks like from the very beginning of the evaluation of
 \texttt{int\_<fib<5>::value}:
 
@@ -118,7 +118,7 @@ The algorithm which prints this is basically a depth first traversal printing
 a line every time it visits a vertex. The algorithm is iterative and thus keeps
 track of the edges it has to visit in a stack. In addition it also keeps track
 of the current depth of the traversal in the stack, so the depth of the
-identation is known when printing a line.
+indentation is known when printing a line.
 
 For better readability, it is also required to know for every depth less than
 the current depth if the algorithm should print a \texttt{'|'} or not. This
@@ -129,7 +129,7 @@ this counter is greater than 0.
 
 \subsection{Stepping}
 
-The algorithm for basic stepping is very similiar to forwardtrace: in it's core
+The algorithm for basic stepping is very similar to forwardtrace: in it's core
 it is also a depth first traversal of the underlying call graph. There are two
 other extra things step has to be able to do:
 
@@ -268,7 +268,7 @@ to common tasks. In Metadebugger several Boost libraries are being used:
         arbitrarily deeply nested tree of values, indexed at each level by some
         key.
 
-        Metadebugger makes use of the xml parsing capabilites of
+        Metadebugger makes use of the xml parsing capabilities of
         Boost.PropertyTree to parse the xml created by Templight.
     \item[Boost.Regex]\cite{boost-regex} \hfill \\
         Boost.Regex provides support for regular expressions in C++.
@@ -314,7 +314,7 @@ following Just libraries are used in Metadebugger:
 
 \subsection{Clang\cite{clang}}
 
-Clang is a C++ frontend for LLVM. Together they form a highly customizable C++
+Clang is a C++ front end for LLVM. Together they form a highly customizable C++
 compiler. Clang is used to compile the source code given as an input to
 Metadebugger.
 
@@ -323,7 +323,7 @@ Metadebugger.
 Templight (in its current form) is a source code patch to Clang. With
 Templight, Clang is able to generate output about the template instantiation
 steps during compilation. Metadebugger takes this output and creates the
-necesseary data structures to be able to simulate the compilation.
+necessary data structures to be able to simulate the compilation.
 
 \subsection{Readline\cite{readline}}
 
