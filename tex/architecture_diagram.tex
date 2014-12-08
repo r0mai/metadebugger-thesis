@@ -1,0 +1,34 @@
+
+\begin{tikzpicture}[auto, node distance=2cm,>=latex']
+    \tikzstyle{block} = [draw, rectangle, text centered];
+    \tikzstyle{metashell-block} = [draw, rectangle, inner sep=0.2cm];
+    \tikzstyle{clang-templight-block} = [draw, rectangle, inner sep=0.2cm];
+    \node [block, text width=2.1cm]
+        (templight)
+        {Templight};
+    \node [above =0.2cm of templight]
+        (clang)
+        {Clang};
+    \node [clang-templight-block, fit = {(templight) (clang)}]
+        (clang-templight)
+        {};
+    \node [block, below =2cm of clang-templight, text width=2.5cm]
+        (trace)
+        {Template instantiation trace};
+    \node [block, left =2cm of clang-templight, text width=2.5cm]
+        (cpp-code)
+        {Entered C++ code};
+    \node [block, left =2cm of trace, text width=2.5cm]
+        (metadebugger)
+        {Metadebugger};
+    \node [above =0.2cm of cpp-code]
+        (metashell)
+        {Metashell};
+    \node [metashell-block, fit = (cpp-code) (metadebugger) (metashell)]
+    {};
+
+    \path[draw,->]
+    (cpp-code) edge (clang-templight)
+    (templight) edge (trace)
+    (trace) edge (metadebugger);
+\end{tikzpicture}
