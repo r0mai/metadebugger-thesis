@@ -111,7 +111,7 @@ He also compares debug operations between run time and metaprograms:
     \begin{tabular}{| c | c |}
         \hline
         Run time debug operation & C++ TMP debug operation \\ \hline \hline
-        step in/over/out functon call & step in/over/out instantiation \\ \hline
+        step in/over/out function call & step in/over/out instantiation \\ \hline
         continue execution & continue compilation \\ \hline
     \end{tabular}
 \end{center}
@@ -250,10 +250,10 @@ You probably noticed that there are two kinds of events metadebugger shows you:
 \end{description}
 
 For example, in the above forwardtrace output, you can see that \texttt{fib<5>}
-reates \texttt{fib<4>} in a \texttt{TemplateInstantiation} event, which in turn
-instantiates \texttt{fib<3>} also in a \texttt{TemplateInstantiation} event and
-so on.  You can also see, that when \texttt{fib<5>} gets to the point to
-instantiate \texttt{fib<3>} it has already been instantiated by
+creates \texttt{fib<4>} in a \texttt{TemplateInstantiation} event, which in
+turn instantiates \texttt{fib<3>} also in a \texttt{TemplateInstantiation}
+event and so on.  You can also see, that when \texttt{fib<5>} gets to the point
+to instantiate \texttt{fib<3>} it has already been instantiated by
 \texttt{fib<4>}, so only a \texttt{Memoization} event happens.
 
 \subsection{Breakpoints and continue}
@@ -275,7 +275,7 @@ Now let's continue the execution until the first breakpoint:
 \end{figure}
 
 \noindent
-Commands can be abbreviated if unambigouos. For example you can use just
+Commands can be abbreviated if unambiguous. For example you can use just
 \texttt{c} instead of \texttt{continue}:
 
 \begin{figure}[H]
@@ -303,11 +303,11 @@ forwardtrace:
     \caption{Forwardtrace in full mode}
 \end{figure}
 
-Full mode doesn't try to follow what the real complier does, but instead it
+Full mode doesn't try to follow what the real compiler does, but instead it
 tries to simulate a dumb compiler, which doesn't use memoizations to speed up
 compilation. For example, \texttt{fib<2>} and its full sub call tree is
 visible two times. This mode can be useful, when the part of the trace you're
-intrested in is hidden under multiple layers of Memoizations in normal mode.
+interested in is hidden under multiple layers of Memoizations in normal mode.
 
 \section{Command reference}
 
