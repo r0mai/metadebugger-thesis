@@ -6,22 +6,22 @@
     \node [block, text width=2.1cm]
         (templight)
         {Templight};
-    \node [above =0.2cm of templight]
+    \node [above=0.2cm of templight]
         (clang)
         {Clang};
-    \node [clang-templight-block, fit = {(templight) (clang)}]
+    \node [clang-templight-block, fit = (templight) (clang)]
         (clang-templight)
         {};
-    \node [block, below =2cm of clang-templight, text width=2.5cm]
+    \node [block, below=2cm of clang-templight, text width=2.5cm]
         (trace)
         {Template instantiation trace};
-    \node [block, left =2cm of clang-templight, text width=2.5cm]
+    \node [block, left=2cm of clang-templight, text width=2.5cm]
         (cpp-code)
         {Entered C++ code};
-    \node [block, left =2cm of trace, text width=2.5cm]
+    \node [block, left=2cm of trace, text width=2.5cm]
         (metadebugger)
         {Metadebugger};
-    \node [above =0.2cm of cpp-code]
+    \node [above=0.2cm of cpp-code]
         (metashell)
         {Metashell};
     \node [metashell-block, fit = (cpp-code) (metadebugger) (metashell)]
