@@ -38,98 +38,98 @@ Here is a list of these tests, with short descriptions:
         \texttt{"Metaprogram not evaluated yet"} when no metaprogram has been
         evalutated.
     \item[\texttt{test\_mdb\_step\_fibonacci}:] \hfill \\
-        Test the output of the \texttt{step} command while executing the
+        Tests if the output of the \texttt{step} command while executing the
         fibonacci metaprogram.
     \item[\texttt{test\_mdb\_step\_2\_fibonacci}:] \hfill \\
-        Test the output of the \texttt{step 2} command while executing the
+        Tests if the output of the \texttt{step 2} command while executing the
         fibonacci metaprogram.
     \item[\texttt{test\_mdb\_step\_fibonacci\_twice}:] \hfill \\
-        Test the output of two \texttt{step} commands while executing the
+        Tests if the output of two \texttt{step} commands while executing the
         fibonacci metaprogram.
     \item[\texttt{test\_mdb\_step\_fibonacci\_twice\_with\_empty\_second\_line}:] \hfill \\
-        Test the output of two \texttt{step} commands while executing the
+        Tests if the output of two \texttt{step} commands while executing the
         fibonacci metaprogram. The second step command is issued implicitly
         with an empty input.
     \item[\texttt{test\_mdb\_step\_fibonacci\_twice\_with\_space\_second\_line}:] \hfill \\
-        Test the output of two \texttt{step} commands while executing the
+        Tests if the output of two \texttt{step} commands while executing the
         fibonacci metaprogram. The second step command is issued implicitly
         with all whitespace input.
     \item[\texttt{test\_mdb\_step\_0\_fibonacci\_at\_start}:] \hfill \\
-        Test that the command \texttt{step 0} has no output if issued at the
+        Tests if the command \texttt{step 0} has no output if issued at the
         start state.
     \item[\texttt{test\_mdb\_step\_0\_fibonacci\_after\_step}:] \hfill \\
-        Test that the command \texttt{step 0} outputs the current frame if it
+        Tests if the command \texttt{step 0} outputs the current frame if it
         is not at start state.
     \item[\texttt{test\_mdb\_step\_over\_the\_whole\_metaprogram\_one\_step}:] \hfill \\
-        Test what happens, when the command \texttt{step over} is issued at the
+        Tests what happens, when the command \texttt{step over} is issued at the
         start state.
     \item[\texttt{test\_mdb\_step\_int\_non\_template\_type}:] \hfill \\
-        Test that \texttt{"(NonTemplateType)"} is printed correctly while
+        Tests if \texttt{"(NonTemplateType)"} is printed correctly while
         stepping through the \texttt{int} metaprogram.
     \item[\texttt{test\_mdb\_step\_over\_the\_whole\_metaprogram\_multiple\_steps}:] \hfill \\
-        Test that iteratively stepping througe a metaprogram works.
+        Tests if iteratively stepping througe a metaprogram works.
     \item[\texttt{test\_mdb\_step\_over\_the\_whole\_metaprogram\_multiple\_steps\_full\_mode}:] \hfill \\
-        Test that iteratively stepping througe a metaprogram works in full
+        Tests if iteratively stepping througe a metaprogram works in full
         mode.
     \item[\texttt{test\_mdb\_step\_minus\_1\_at\_start}:] \hfill \\
-        Test that the command \texttt{step -1} produces the output
+        Tests if the command \texttt{step -1} produces the output
         \texttt{"Metaprogram reached the beginning"} when called at the
         beginning of a metaprogram.
     \item[\texttt{test\_mdb\_step\_minus\_1\_after\_step}:] \hfill \\
-        Test that the command \texttt{step -1} produces the output
+        Tests if the command \texttt{step -1} produces the output
         \texttt{"Metaprogram reached the beginning"} when called after a single
         \texttt{step} command.
     \item[\texttt{test\_mdb\_step\_minus\_1\_after\_step\_in\_full\_mode}:] \hfill \\
-        Test that the command \texttt{step -1} produces the output
+        Tests if the command \texttt{step -1} produces the output
         \texttt{"Metaprogram reached the beginning"} when called after a single
         \texttt{step} command in full mode.
     \item[\texttt{test\_mdb\_step\_0\_at\_start}:] \hfill \\
-        Test that the command \texttt{step 0} has no output if issued at the
+        Tests if the command \texttt{step 0} has no output if issued at the
         start state.
     \item[\texttt{test\_mdb\_step\_0\_at\_end}:] \hfill \\
-        Test that the command \texttt{step 0} has no output if issued at the
+        Tests if the command \texttt{step 0} has no output if issued at the
         end state.
     \item[\texttt{test\_mdb\_step\_minus\_1\_after\_step\_2}:] \hfill \\
-        Test that the command \texttt{step -1} prints the correct type when
+        Tests if the command \texttt{step -1} prints the correct type when
         called after a \texttt{step 2} command.
     \item[\texttt{test\_mdb\_step\_minus\_1\_after\_step\_2\_in\_full\_mode}:] \hfill \\
-        Test that the command \texttt{step -1} prints the correct type when
+        Tests if the command \texttt{step -1} prints the correct type when
         called after a \texttt{step 2} command in full mode.
     \item[\texttt{test\_mdb\_step\_over\_fib\_from\_root}:] \hfill \\
-        Test that the command \texttt{step over} reaches the end of the
+        Tests if the command \texttt{step over} reaches the end of the
         metaprogram when called at the beginning of the metaprogram.
     \item[\texttt{test\_mdb\_step\_over\_fib\_from\_after\_step}:] \hfill \\
-        Test that the command \texttt{step over} prints the correct type when
+        Tests if the command \texttt{step over} prints the correct type when
         called after a single \texttt{step} command.
     \item[\texttt{test\_mdb\_step\_over\_minus\_1\_fib\_from\_after\_step}:] \hfill \\
-        Test that the command \texttt{step over -1} is the inverse of
+        Tests if the command \texttt{step over -1} is the inverse of
         \texttt{step over} in the middle of a metaproram.
     \item[\texttt{test\_mdb\_step\_over\_minus\_1\_multi\_fib\_from\_after\_step}:] \hfill \\
-        Test that the command \texttt{step over -1} is not always the inverse
+        Tests if the command \texttt{step over -1} is not always the inverse
         of \texttt{step over} in the middle of a metaproram, using a
         metaprogram designed to exploit this asymmetry.
     \item[\texttt{test\_mdb\_step\_over\_template\_spec\_no\_deduced\_event}:] \hfill \\
-        Test that the algorithm detailed in \ref{graph-filtering} filters out
+        Tests if the algorithm detailed in \ref{graph-filtering} filters out
         non TemplateInstantiation and non Memoization events.
     \item[\texttt{test\_mdb\_step\_garbage\_argument}:] \hfill \\
         Tests if the step command prints
         \texttt{"Argument parsing failed"} when it is called with a invalid
         arguments.
     \item[\texttt{test\_mdb\_command\_repeatable\_constructor\_test}:] \hfill \\
-        Test \texttt{mdb\_command} class' constructor when \texttt{repeatable}
-        is passed as an argument.
+        Tests the \texttt{mdb\_command} class' constructor when
+        \texttt{repeatable} is passed as an argument.
     \item[\texttt{test\_mdb\_command\_non\_repeatable\_constructor\_test}:] \hfill \\
-        Test \texttt{mdb\_command} class' constructor when
+        Tests the \texttt{mdb\_command} class' constructor when
         \texttt{non\_repeatable} is passed as an argument.
     \item[\texttt{test\_mdb\_command\_multiple\_keys\_constructor\_test}:] \hfill \\
-        Test \texttt{mdb\_command} class' constructor when multiple keys are
+        Tests the \texttt{mdb\_command} class' constructor when multiple keys are
         passed.
     \item[\texttt{test\_mdb\_command\_full\_description\_empty\_long\_description}:] \hfill \\
-        Test \texttt{mdb\_command::get\_full\_description} member function when
-        the long description is an empty string.
+        Tests the \texttt{mdb\_command::get\_full\_description} member function
+        when the long description is an empty string.
     \item[\texttt{test\_mdb\_command\_full\_description\_non\_empty\_long\_description}:] \hfill \\
-        Test \texttt{mdb\_command::get\_full\_description} member function when
-        the long description is not an empty string.
+        Tests the \texttt{mdb\_command::get\_full\_description} member function
+        when the long description is not an empty string.
     \item[\texttt{test\_templight\_xml\_parse\_empty}:] \hfill \\
         Tests \texttt{metaprogram::create\_from\_xml\_string()} with a templight
         xml without any events.
@@ -159,24 +159,24 @@ Here is a list of these tests, with short descriptions:
         Tests \texttt{metaprogram::create\_from\_xml\_string()} failure with a
         templight xml with an invalid instantiation kind.
     \item[\texttt{test\_mdb\_shell\_is\_stopped\_false\_by\_default}:] \hfill \\
-        Tests wheter the \texttt{mdb\_shell::stopped()} returns \texttt{false}
+        Tests whether the \texttt{mdb\_shell::stopped()} returns \texttt{false}
         right after construcion.
     \item[\texttt{test\_mdb\_shell\_empty\_lines}:] \hfill \\
-        Test that the \texttt{mdb\_shell} class doesn't store empty commands
+        Tests if the \texttt{mdb\_shell} class doesn't store empty commands
         in the history, but does store non-empty commands only containing
         whitespaces do. Also check, that the shell doesn't respond with any
         output to these command strings.
     \item[\texttt{test\_mdb\_shell\_identical\_lines\_in\_history}:] \hfill \\
-        Test that the \texttt{mdb\_shell} class doesn't store consecutive
+        Tests if the \texttt{mdb\_shell} class doesn't store consecutive
         identical lines in the history.
     \item[\texttt{test\_mdb\_shell\_identical\_all\_space\_lines\_in\_history}:] \hfill \\
-        Test that the \texttt{mdb\_shell} class doesn't store consecutive
+        Tests if the \texttt{mdb\_shell} class doesn't store consecutive
         identical all whitespace lines in the history.
     \item[\texttt{test\_mdb\_shell\_skips\_empty\_lines}:] \hfill \\
-        Test that the \texttt{mdb\_shell} class doesn't story empty lines in
+        Tests if the \texttt{mdb\_shell} class doesn't story empty lines in
         the history.
     \item[\texttt{test\_mdb\_shell\_prompt}:] \hfill \\
-        Tests wheter \texttt{mdb\_shell::prompt()} returns \texttt{"(mdb) "}.
+        Tests whether \texttt{mdb\_shell::prompt()} returns \texttt{"(mdb) "}.
     \item[\texttt{test\_mdb\_forwardtrace\_without\_evaluation}:] \hfill \\
         Tests if the forwardtrace command prints
         \texttt{"Metaprogram not evaluated yet"} when no metaprogram has been
@@ -186,56 +186,56 @@ Here is a list of these tests, with short descriptions:
         \texttt{"Argument parsing failed"} when it is called with a invalid
         arguments.
     \item[\texttt{test\_mdb\_forwardtrace\_int}:] \hfill \\
-        Test the output of \texttt{forwardtrace} after \texttt{evaluate int}.
+        Tests the output of \texttt{forwardtrace} after \texttt{evaluate int}.
     \item[\texttt{test\_mdb\_forwardtrace\_int\_in\_full\_mode}:] \hfill \\
-        Test the output of \texttt{forwardtrace} after
+        Tests the output of \texttt{forwardtrace} after
         \texttt{evaluate -full int}.
     \item[\texttt{test\_mdb\_forwardtrace\_when\_metaprogram\_finished}:] \hfill \\
-        Test that \texttt{forwardtrace} produces the output
+        Tests if \texttt{forwardtrace} produces the output
         \texttt{Metaprogram finished.} when issued at the end of a metaprogram.
     \item[\texttt{test\_mdb\_forwardtrace\_when\_metaprogram\_finished\_in\_full\_mode}:] \hfill \\
-        Test that \texttt{forwardtrace} produces the output
+        Tests if \texttt{forwardtrace} produces the output
         \texttt{Metaprogram finished.} when issued at the end of a metaprogram
         in full mode.
     \item[\texttt{test\_mdb\_forwardtrace\_int\_with\_ft}:] \hfill \\
-        Test the output of \texttt{ft} after \texttt{evaluate int}.
+        Tests the output of \texttt{ft} after \texttt{evaluate int}.
     \item[\texttt{test\_mdb\_forwardtrace\_from\_root}:] \hfill \\
-        Test the output of \texttt{forwardtrace} for the fibonacci metaprogram
+        Tests the output of \texttt{forwardtrace} for the fibonacci metaprogram
         issued from the beginning of the metaprogram.
     \item[\texttt{test\_mdb\_forwardtrace\_from\_root\_in\_full\_mode}:] \hfill \\
-        Test the output of \texttt{forwardtrace} for the fibonacci metaprogram
+        Tests the output of \texttt{forwardtrace} for the fibonacci metaprogram
         issued from the beginning of the metaprogram in full mode.
     \item[\texttt{test\_mdb\_forwardtrace\_from\_memoization}:] \hfill \\
-        Test the output of \texttt{forwardtrace} for the fibonacci metaprogram
+        Tests the output of \texttt{forwardtrace} for the fibonacci metaprogram
         from a Memoization event.
     \item[\texttt{test\_mdb\_forwardtrace\_ft\_from\_step\_1}:] \hfill \\
-        Test the output of \texttt{forwardtrace} for the fibonacci metaprogram
+        Tests the output of \texttt{forwardtrace} for the fibonacci metaprogram
         after one \texttt{step}.
     \item[\texttt{test\_mdb\_forwardtrace\_ft\_from\_step\_1\_in\_full\_mode}:] \hfill \\
-        Test the output of \texttt{forwardtrace} for the fibonacci metaprogram
+        Tests the output of \texttt{forwardtrace} for the fibonacci metaprogram
         after one \texttt{step} in full mode.
     \item[\texttt{test\_mdb\_forwardtrace\_ft\_from\_step\_1\_with\_limit\_0}:] \hfill \\
-        Test the output of \texttt{forwardtrace 0} for the fibonacci
+        Tests the output of \texttt{forwardtrace 0} for the fibonacci
         metaprogram after one \texttt{step}.
     \item[\texttt{test\_mdb\_forwardtrace\_ft\_from\_step\_1\_with\_limit\_1}:] \hfill \\
-        Test the output of \texttt{forwardtrace 1} for the fibonacci
+        Tests the output of \texttt{forwardtrace 1} for the fibonacci
         metaprogram after one \texttt{step}.
     \item[\texttt{test\_mdb\_forwardtrace\_ft\_from\_step\_1\_with\_limit\_1\_in\_full\_mode}:] \hfill \\
-        Test the output of \texttt{forwardtrace 1} for the fibonacci
+        Tests the output of \texttt{forwardtrace 1} for the fibonacci
         metaprogram after one \texttt{step} in full mode.
     \item[\texttt{test\_mdb\_forwardtrace\_ft\_from\_step\_2\_with\_limit\_2}:] \hfill \\
-        Test the output of \texttt{forwardtrace 2} for the fibonacci
+        Tests the output of \texttt{forwardtrace 2} for the fibonacci
         metaprogram after \texttt{step 2}.
     \item[\texttt{test\_mdb\_forwardtrace\_ft\_from\_step\_2\_with\_limit\_100}:] \hfill \\
-        Test the output of \texttt{forwardtrace 100} for the fibonacci
+        Tests the output of \texttt{forwardtrace 100} for the fibonacci
         metaprogram after \texttt{step 2}.
     \item[\texttt{test\_mdb\_forwardtrace\_from\_root\_on\_narrow\_terminal}:] \hfill \\
-        Test forwardtrace output on a narrow terminal. Wrapping should occur
+        Tests forwardtrace output on a narrow terminal. Wrapping should occur
         at the terminal boundary.
     \item[\texttt{test\_mdb\_forwardtrace\_on\_extremely\_narrow\_terminal\_w0}:] \hfill \\
-        Test forwardtrace output on a zero character wide terminal.
+        Tests forwardtrace output on a zero character wide terminal.
     \item[\texttt{test\_mdb\_forwardtrace\_on\_extremely\_narrow\_terminal\_w1}:] \hfill \\
-        Test forwardtrace output on a one character wide terminal.
+        Tests forwardtrace output on a one character wide terminal.
     \item[\texttt{test\_mdb\_command\_handler\_map\_command\_selection\_1..8}:] \hfill \\
         Eight test cases, which test the command selection algorithm: \\
         \texttt{mdb\_command\_handler\_map::get\_command\_from\_map()}. \\
@@ -250,19 +250,19 @@ Here is a list of these tests, with short descriptions:
         Tests the \texttt{to\_string(instantiation\_kind)} for all possible
         input values.
     \item[\texttt{test\_is\_template\_type\_primitive\_types}:] \hfill \\
-        Test that \texttt{is\_template\_type(const std::string\&)} returns
+        Tests if \texttt{is\_template\_type(const std::string\&)} returns
         false when called with primitive type names.
     \item[\texttt{test\_is\_template\_type\_array\_type\_of\_non\_template\_types}:] \hfill \\
-        Test that \texttt{is\_template\_type(const std::string\&)} returns
+        Tests if \texttt{is\_template\_type(const std::string\&)} returns
         \texttt{false} when called with arrays of various non template types.
     \item[\texttt{test\_is\_template\_type\_pointer\_to\_non\_template\_types}:] \hfill \\
-        Test that \texttt{is\_template\_type(const std::string\&)} returns
+        Tests if \texttt{is\_template\_type(const std::string\&)} returns
         \texttt{false} when called with pointers to various non template types.
     \item[\texttt{test\_is\_template\_type\_templates}:] \hfill \\
-        Test that \texttt{is\_template\_type(const std::string\&)} returns
+        Tests if \texttt{is\_template\_type(const std::string\&)} returns
         \texttt{true} when called with various template types.
     \item[\texttt{test\_is\_template\_type\_char\_literals}:] \hfill \\
-        Test that \texttt{is\_template\_type(const std::string\&)} returns
+        Tests if \texttt{is\_template\_type(const std::string\&)} returns
         \texttt{true} when called with various template types with
         \texttt{'<'} and \texttt{'>'} character literals.
     \item[\texttt{test\_mdb\_continue\_without\_evaluation}:] \hfill \\
@@ -274,56 +274,56 @@ Here is a list of these tests, with short descriptions:
         \texttt{"Argument parsing failed"} when it is called with a invalid
         arguments.
     \item[\texttt{test\_mdb\_continue\_fibonacci\_no\_breakpoint}:] \hfill \\
-        Test that after \texttt{continue} the execution reaches the end of the
+        Tests if after \texttt{continue} the execution reaches the end of the
         metaprogram if there are no breakpoints.
     \item[\texttt{test\_mdb\_continue\_fibonacci\_reevaulation\_removes\_breakpoints}:] \hfill \\
-        Test that reevaluation removes breakpoints using \texttt{continue}.
+        Tests if reevaluation removes breakpoints using \texttt{continue}.
     \item[\texttt{test\_mdb\_continue\_fibonacci\_1\_breakpoint}:] \hfill \\
-        Test \texttt{continue} on the fibonacci metaprogram with one
+        Tests \texttt{continue} on the fibonacci metaprogram with one
         breakpoint.
     \item[\texttt{test\_mdb\_continue\_2\_fibonacci\_1\_breakpoint}:] \hfill \\
-        Test \texttt{continue 2} on the fibonacci metaprogram with one
+        Tests \texttt{continue 2} on the fibonacci metaprogram with one
         breakpoint.
     \item[\texttt{test\_mdb\_continue\_twice\_fibonacci\_1\_breakpoint}:] \hfill \\
-        Test \texttt{continue} twice on the fibonacci metaprogram with one
+        Tests \texttt{continue} twice on the fibonacci metaprogram with one
         breakpoint.
     \item[\texttt{test\_mdb\_continue\_fibonacci\_2\_breakpoints}:] \hfill \\
-        Test \texttt{continue} on the fibonacci metaprogram with two
+        Tests \texttt{continue} on the fibonacci metaprogram with two
         breakpoints.
     \item[\texttt{test\_mdb\_continue\_2\_fibonacci\_2\_breakpoints}:] \hfill \\
-        Test \texttt{continue 2} on the fibonacci metaprogram with two
+        Tests \texttt{continue 2} on the fibonacci metaprogram with two
         breakpoints.
     \item[\texttt{test\_mdb\_continue\_10\_fibonacci\_2\_breakpoints}:] \hfill \\
-        Test \texttt{continue 10} on the fibonacci metaprogram with two
+        Tests \texttt{continue 10} on the fibonacci metaprogram with two
         breakpoints, to check that it doesn't break even if we give a
         parameter greater than the number of breakpoints.
     \item[\texttt{test\_mdb\_continue\_0\_fibonacci\_1\_breakpoint}:] \hfill \\
-        Test \texttt{continue 0} on the fibonacci metaprogram with one
+        Tests \texttt{continue 0} on the fibonacci metaprogram with one
         breakpoint.
     \item[\texttt{test\_mdb\_continue\_minus\_1\_at\_start}:] \hfill \\
-        Test \texttt{continue -1} at the beginning of the metaprogram.
+        Tests \texttt{continue -1} at the beginning of the metaprogram.
     \item[\texttt{test\_mdb\_continue\_minus\_2\_at\_start}:] \hfill \\
-        Test \texttt{continue -2} at the beginning of the metaprogram.
+        Tests \texttt{continue -2} at the beginning of the metaprogram.
     \item[\texttt{test\_mdb\_continue\_minus\_1\_with\_preceding\_breakpoint}:] \hfill \\
-        Test \texttt{continue -1} with one preceding breakpoint.
+        Tests \texttt{continue -1} with one preceding breakpoint.
     \item[\texttt{test\_mdb\_continue\_minus\_1\_without\_preceding\_breakpoint}:] \hfill \\
-        Test \texttt{continue -1} without preceding breakpoints.
+        Tests \texttt{continue -1} without preceding breakpoints.
     \item[\texttt{test\_mdb\_continue\_to\_end\_and\_back\_to\_start}:] \hfill \\
-        Test \texttt{continue} by traversing to the end of the metaprogram,
+        Tests \texttt{continue} by traversing to the end of the metaprogram,
         then back to the beginning.
     \item[\texttt{test\_mdb\_continue\_to\_end\_and\_back\_to\_start\_in\_full\_mode}:] \hfill \\
-        Test \texttt{continue} by traversing to the end of the metaprogram,
+        Tests \texttt{continue} by traversing to the end of the metaprogram,
         then back to the beginning in full mode.
     \item[\texttt{test\_mdb\_continue\_to\_one\_before\_end\_and\_back\_to\_start\_in\_full\_mode}:] \hfill \\
-        Test \texttt{continue} by traversing to the last breakpoint, then back
+        Tests \texttt{continue} by traversing to the last breakpoint, then back
         to the beginning in full mode.
     \item[\texttt{test\_empty\_file\_location}:] \hfill \\
-        Test the \texttt{file\_location} class' default constructor.
+        Tests the \texttt{file\_location} class' default constructor.
     \item[\texttt{test\_file\_location\_construction}:] \hfill \\
-        Test the \texttt{file\_location} class'
+        Tests the \texttt{file\_location} class'
         \texttt{(std::string, int, int)} constructor.
     \item[\texttt{test\_file\_location\_equality}:] \hfill \\
-        Test the overloaded equality operator, which takes two
+        Tests the overloaded equality operator, which takes two
         \texttt{file\_location} parameters.
     \item[\texttt{test\_mdb\_rbreak\_without\_evaluated\_metaprogram}:] \hfill \\
         Tests if the rbreak command prints
@@ -341,34 +341,34 @@ Here is a list of these tests, with short descriptions:
         \texttt{"<regex> is not a valid regex"}, where \texttt{<regex>} is the
         entered regular expression, when it has some syntatical error.
     \item[\texttt{test\_mdb\_rbreak\_with\_valid\_regex\_no\_match}:] \hfill \\
-        Test that, when a regex is given to \texttt{rbreak} which never stops
+        Tests if, when a regex is given to \texttt{rbreak} which never stops
         the execution, the string
         \texttt{"Breakpoint <regex> will never stop the execution"} is
         printed.
     \item[\texttt{test\_mdb\_rbreak\_with\_valid\_regex\_with\_one\_match}:] \hfill \\
-        Test that, when a regex is given as a paramter to \texttt{rbreak} which
+        Tests if, when a regex is given as a paramter to \texttt{rbreak} which
         never stops the execution once, the string
         \texttt{"Breakpoint <regex> will stop the execution on 1 location"} is
         printed.
     \item[\texttt{test\_mdb\_rbreak\_with\_valid\_regex\_with\_two\_matches}:] \hfill \\
-        Test that, when a regex is given as a paramter to \texttt{rbreak} which
+        Tests if, when a regex is given as a paramter to \texttt{rbreak} which
         never stops the execution twice, the string
         \texttt{"Breakpoint <regex> will stop the execution on 2 locations"} is
         printed.
     \item[\texttt{test\_mdb\_rbreak\_does\_not\_count\_stops\_in\_unreachable\_subgraphs}:] \hfill \\
-        Test the the execution stop counter in \texttt{rbreak} doesn't count
+        Tests if the the execution stop counter in \texttt{rbreak} doesn't count
         stops in unreachable subgraphs. This could be a problem if precompiled
-        headers were used metadebugger.
+        headers were used in Metadebugger.
     \item[\texttt{test\_mdb\_rbreak\_with\_valid\_regex\_in\_full\_mode}:] \hfill \\
-        Test \texttt{rbreak} and its output in full mode.
+        Tests \texttt{rbreak} and its output in full mode.
     \item[\texttt{test\_mdb\_rbreak\_with\_valid\_regex\_in\_full\_mode\_match\_only\_root}:] \hfill \\
-        Test \texttt{rbreak} and its output in full mode, with a regex which
+        Tests \texttt{rbreak} and its output in full mode, with a regex which
         matches only the root node.
     \item[\texttt{test\_mdb\_rbreak\_with\_valid\_regex\_in\_full\_mode\_match\_also\_root}:] \hfill \\
-        Test \texttt{rbreak} and its output in full mode, with a regex which
+        Tests \texttt{rbreak} and its output in full mode, with a regex which
         matches the root node, but mathces outher nodes as well.
     \item[\texttt{test\_metaprogram\_constuctor}:] \hfill \\
-        Tests to see if \texttt{metaprogram}'s constructor creates an object
+        Tests if \texttt{metaprogram}'s constructor creates an object
         with the expected empty state.
     \item[\texttt{test\_metaprogram\_with\_single\_vertex}:] \hfill \\
         Tests metaprogram's graph representation and state stay correct while
@@ -397,22 +397,22 @@ Here is a list of these tests, with short descriptions:
         \texttt{"Metaprogram not evaluated yet"} when no metaprogram has been
         evalutated.
     \item[\texttt{test\_mdb\_backtrace\_unstepped\_fibonacci}:] \hfill \\
-        Test the output of the \texttt{backtrace} command in a fibonacci
+        Tests the output of the \texttt{backtrace} command in a fibonacci
         metaprogram from its start state.
     \item[\texttt{test\_mdb\_backtrace\_when\_metaprogram\_finished}:] \hfill \\
-        Test the output of the \texttt{backtrace} command in a fibonacci
+        Tests the output of the \texttt{backtrace} command in a fibonacci
         metaprogram from its last state.
     \item[\texttt{test\_mdb\_backtrace\_when\_metaprogram\_finished\_in\_full\_mode}:] \hfill \\
-        Test the output of the \texttt{backtrace} command in a fibonacci
+        Tests the output of the \texttt{backtrace} command in a fibonacci
         metaprogram from its last state in full mode.
     \item[\texttt{test\_mdb\_backtrace\_1\_stepped\_fibonacci}:] \hfill \\
-        Test the output of the \texttt{backtrace} command in a fibonacci
+        Tests the output of the \texttt{backtrace} command in a fibonacci
         metaprogram after it was stepped once.
     \item[\texttt{test\_mdb\_backtrace\_2\_stepped\_fibonacci}:] \hfill \\
-        Test the output of the \texttt{backtrace} command in a fibonacci
+        Tests the output of the \texttt{backtrace} command in a fibonacci
         metaprogram after it was stepped twice.
     \item[\texttt{test\_mdb\_backtrace\_3\_stepped\_fibonacci}:] \hfill \\
-        Test the output of the \texttt{backtrace} command in a fibonacci
+        Tests the output of the \texttt{backtrace} command in a fibonacci
         metaprogram after it was stepped three times.
     \item[\texttt{test\_mdb\_backtrace\_garbage\_argument}:] \hfill \\
         Tests if the backtrace command prints
@@ -422,11 +422,11 @@ Here is a list of these tests, with short descriptions:
         Tests if the \texttt{"bt"} alias of the backtrace command is
         accepcted.
     \item[\texttt{test\_mdb\_evaluate\_int}:] \hfill \\
-        Test if the command \texttt{"evaluate int"} produces the output
+        Tests if the command \texttt{"evaluate int"} produces the output
         \texttt{"Metaprogram started"} and result of the evaluation is
         \texttt{int}.
     \item[\texttt{test\_mdb\_evaluate\_fib\_10}:] \hfill \\
-        Test if the command \texttt{"evaluate int\_<fib<10>::value>"} produces
+        Tests if the command \texttt{"evaluate int\_<fib<10>::value>"} produces
         the output \texttt{"Metaprogram started"} and result of the evaluation
         is \texttt{int\_<55>}.
     \item[\texttt{test\_mdb\_evaluate\_no\_arguments\_no\_evaluation}:] \hfill \\
@@ -439,26 +439,26 @@ Here is a list of these tests, with short descriptions:
         evaluated and it is called with no arguments, but with trailing
         whitespaces.
     \item[\texttt{test\_mdb\_evaluate\_failure\_will\_reset\_metaprogram\_state}:] \hfill \\
-        If an evaluation fails for some reason, then metadebugger should act
+        Tests if an evaluation fails for some reason, then metadebugger acts
         like no metaprogram has been evaluated.
     \item[\texttt{test\_mdb\_evaluate\_missing\_argument\_will\_run\_last\_metaprogram}:] \hfill \\
-        Test if the re-evaluation semantics of the \texttt{evaluate} command
+        Tests if the re-evaluation semantics of the \texttt{evaluate} command
         works.
     \item[\texttt{test\_mdb\_evaluate\_missing\_argument\_will\_reset\_metaprogram\_state}:] \hfill \\
-        Test if re-evaluation resets the metaprogram state to its start state,
+        Tests if re-evaluation resets the metaprogram state to its start state,
         even if it was stepped once.
     \item[\texttt{test\_mdb\_evaluate\_filters\_similar\_edges}:] \hfill \\
-        Check if the graph filtering algorithm detailed in
+        Tests if the graph filtering algorithm detailed in
         \ref{graph-filtering} works correctly.
     \item[\texttt{test\_mdb\_evaluate\_clears\_breakpoints}:] \hfill \\
-        Test if evaluating a metaprogram clears all breakpoints.
+        Tests if evaluating a metaprogram clears all breakpoints.
     \item[\texttt{test\_mdb\_evaluate\_reevaluate\_clears\_breakpoints}:] \hfill \\
-        Test if re-evaluating a metaprogram clears all breakpoints.
+        Tests if re-evaluating a metaprogram clears all breakpoints.
     \item[\texttt{test\_mdb\_evaluate\_failure\_clears\_breakpoints}:] \hfill \\
-        Test if an evaluation failure clears all breakpoints.
+        Tests if an evaluation failure clears all breakpoints.
     \item[\texttt{test\_readme\_continue\_abbreviated\_as\_c}:] \hfill \\
         In \texttt{README.md} there is a suggestion, that the user can
-        abbreviate \texttt{continue} as \texttt{c}. Test to make sure it works.
+        abbreviate \texttt{continue} as \texttt{c}. Tests to make sure it works.
     \item[\texttt{test\_readme\_getting\_started}:] \hfill \\
         Tests the procedure described in the Getting Started section of the
         README.md file.
