@@ -1,5 +1,4 @@
 class metaprogram {
-  // ...
 public:
   typedef boost::optional<vertex_descriptor>
       optional_vertex_descriptor;

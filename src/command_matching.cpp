@@ -6,18 +6,15 @@ get_command_for_line(line) {
   // key is the command string,
   // value is a pointer to the actual command
   (key, value) = key_command_map.lower_bound(command);
-
   // no match if the key is greater than the
   // greatest element in key map
   if (key_command_map.past_end(key)) {
     return no_match;
   }
-
   // No command starts with this prefix
   if (!starts_with(key, command)) {
     return no_match;
   }
-
   // Check if the found command is unambiguous
   // Pass if the match is full
   if (command != lower->first) {
@@ -36,6 +33,5 @@ get_command_for_line(line) {
       }
     }
   }
-
   return value;
 }

@@ -1,5 +1,4 @@
 class metaprogram {
-  // ...
 public:
   typedef boost::optional<edge_descriptor>
       optional_edge_descriptor;
@@ -13,7 +12,6 @@ public:
     parent_edge_t parent_edge;
     edge_stack_t edge_stack;
   };
-
   void step();
 private:
   state_t state;
