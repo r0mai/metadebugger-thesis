@@ -113,10 +113,10 @@ with a graph, where all edges are enabled.
         Disable all edges. This is useful because the following stages become
         simpler.
     \item
-        Enable edges going from the root vertex for which the
-        \texttt{point\_of\_instantiation} edge property matches the currently
-        entered line. This is to filter out instantiation sub trees, which were
-        not initiated by the type entered by the user.
+        Enable edges going from the root vertex for which the point of
+        instantiation edge property matches the currently entered line. This is
+        to filter out instantiation sub trees, which were not initiated by the
+        type entered by the user.
     \item
         Now a depth first traversal is done from the root vertex going only on
         the edges we enabled in the previous section. For every new vertex the
@@ -165,7 +165,7 @@ this counter is greater than 0.
 
 \subsection{Stepping}
 
-The algorithm for basic stepping is very similar to forwardtrace: in it's core
+The algorithm for basic stepping is very similar to forwardtrace. In it's core
 it is also a depth first traversal of the underlying call graph. There are two
 other extra things step has to be able to do:
 
