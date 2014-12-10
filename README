@@ -12,3 +12,6 @@ fib5_call_graph.ps
         #msh mdb int_<fib<5>::value>
         img'
     dot -Tps  graph.dot  > fib5_call_graph.eps
+
+The finished thesis in pdf format:
+https://github.com/r0mai/metadebugger-thesis/releases/download/v1.0/thesis.pdf
